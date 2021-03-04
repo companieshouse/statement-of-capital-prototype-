@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What date were the shares x?
+  What date was x?
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,17 +14,17 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <form class="form" action="statement-of-capital/most-common-type" method="get">
+      <span class="govuk-caption-xl">SH...</span>
+      <form class="form" action="most-common-type" method="get">
 
         {{ govukDateInput({
 id: "passport-issued",
 namePrefix: "passport-issued",
 fieldset: {
 legend: {
-text: "What date were the shares x?",
+text: "What date was x?",
 isPageHeading: true,
-classes: "govuk-fieldset__legend--l"
+classes: "govuk-fieldset__legend--xl"
 }
 },
 hint: {
