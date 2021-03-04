@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Statement of Capital
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+
+      <h2 class="govuk-heading-m">Default pages</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/service/sign-in">Sign in</a>
+        </li>
+        <li>
+          <a href="/service/company-details">Company details</a>
+        </li>
+        <li>
+          <a href="/service/company-authentication">Company authentication</a>
+        </li>
+        <li>
+          <a href="/service/statement-of-capital">Review the statement of capital</a>
+        </li>
+        <li>
+          <a href="/service/change">Make a change</a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m">Dynamic pages</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/service/date-of-x">Date of x</a>
+        </li>
+        <li>
+          <a href="/service/statement-of-capital/most-common-type">Most common type</a>
+        </li>
+        <li>
+          <a href="/service//statement-of-capital/how-many-shares">How many shares?</a>
+        </li>
+        <li>
+          <a href="/service/statement-of-capital/choose-a-value">Choose a value</a>
+        </li>
+        <li>
+          <a href="/service/statement-of-capital">Review the statement of capital</a>
+        </li>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

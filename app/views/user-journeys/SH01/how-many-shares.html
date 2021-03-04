@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How many shares?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-x">(SH01) Return of allotment of shares</span>
+      <h1 class="govuk-heading-l">How many shares are being alloted?</h1>
+
+      <form class="form" action="choose-a-value" method="get">
+        <p class="govuk-body">As the only shareholder, they'll own 100% of the company regardless of how many shares you choose.</p>
+        <p class="govuk-body">You only need to choose more than one share if you want to split ownership with others in future.</p>
+        <p class="govuk-body">You can add more shares after the company is registered.</p>
+
+        {{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "shareholders",
+  name: "shareholders",
+  fieldset: {
+    legend: {
+      text: "Number of shares",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "1share",
+      text: "1 share"
+    },
+    {
+      value: "other",
+      text: "Other amount"
+    }
+  ]
+}) }}
+
+        <p>These are 'ordinary shares' in British pounds. They entitle the shareholder to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>receive company profits through dividends</li>
+          <li>vote on important company issues like choosing directors</li>
+        </ul>
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

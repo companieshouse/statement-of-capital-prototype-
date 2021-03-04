@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What change would you like to make? - Apply to remove your home address from the Companies House register - GOV.UK
+{% endblock %}
+
+<!--service names are not currently shown on CH sign in or company authenticate-->
+{% set serviceName %}
+{% endset%}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase-banner.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="date-of-allotment" method="post">
+
+            {{ govukCheckboxes({
+    idPrefix: "waste",
+    name: "waste",
+    fieldset: {
+      legend: {
+        text: "What change would you like to make?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all that apply."
+    },
+    items: [
+      {
+        value: "carcasses",
+        text: "Return of allotment of shares (SH01)"
+      },
+      {
+        value: "mines",
+        text: "Consolidate, sub-divide, redeem shares or re-convert stock into shares (SH02)"
+      },
+      {
+        value: "farm",
+        text: "Notify a purchase of own shares (SH03)"
+      },
+      {
+        value: "carcasses",
+        text: "Notify a sale or transfer of treasury shares (SH04)"
+      },
+      {
+        value: "mines",
+        text: "Notify a cancellation of treasury shares (SH05)"
+      },
+      {
+        value: "farm",
+        text: "Notify a cancellation of shares (SH06)"
+      },
+      {
+        value: "carcasses",
+        text: "Notify a cancellation of shares: public company (SH07)"
+      },
+      {
+        value: "mines",
+        text: "Notify a name or other designation of class of shares (SH08)"
+      },
+      {
+        value: "farm",
+        text: "Allotting a new class of shares by an unlimited company (SH09)"
+      },
+      {
+        value: "carcasses",
+        text: "Give notice of particulars of variation of rights attached to shares (SH10)"
+      },
+      {
+        value: "mines",
+        text: "Give notice of a new class of members (SH11)"
+      },
+      {
+        value: "farm",
+        text: "Give notice of particulars of variation of class rights (SH12)"
+      },
+      {
+        value: "farm",
+        text: "Give notice of name or other designation of class of members (SH13)"
+      },
+      {
+        value: "carcasses",
+        text: "Notify a redenomination of shares (SH14)"
+      },
+      {
+        value: "mines",
+        text: "Notify a reduction of capital following redenomination (SH15)"
+      },
+      {
+        value: "farm",
+        text: "Give notice of application to court to cancel special resolution (SH16)"
+      },
+      {
+        value: "farm",
+        text: "Give notice by the company of application to cancel special resolution (SH17)"
+      },
+      {
+        value: "carcasses",
+        text: "Statement of capital when reducing capital in a company (SH19)"
+      },
+      {
+        value: "mines",
+        text: "Statement of capital when re-registering from unlimited to limited (SH19)"
+      }
+    ]
+  }) }}
+
+            {{ govukButton({
+        text: "Continue"
+      }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
