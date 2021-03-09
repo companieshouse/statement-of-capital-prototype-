@@ -10,50 +10,78 @@
 {% endblock %}
 
 {% block content %}
-  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">(SH01) Return of allotment of shares</span>
-      <h1 class="govuk-heading-l">Do you want to allot the most common type of shares?</h1>
+      {% if data['form'] === 'SH01' %}
+        <span class="govuk-caption-l">
+          (SH01) Return of allotment of shares</span>
+
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        <span class="govuk-caption-l">
+          (SH06) Notify a cancellation of shares</span>
+      {% endif %}
+
+      {% set LegendHtml %}
+      {% if data['form'] === 'SH01' %}
+        Do you want to allot the most common type of shares?
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        Do you want to cancel the most common type of shares?
+      {% endif %}
+      {% endset -%}
 
       <form class="form" action="how-many-shares" method="get">
-        <p class="govuk-body">Most companies use 'Ordinary' shares in British pounds (GBP).</p>
-        <p class="govuk-body">Shareholders will have the following rights:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>one vote per share on company decisions</li>
-          <li>receive a share of profits as dividend payments</li>
-          <li>receive a share of capital, for example if it closes down</li>
-        </ul>
-
-        {{ govukInsetText({
-  text: "Only choose 'No' if you need to create more than one type of share or need to set up shares in a different way."
-}) }}
-
         {{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "shareholders",
-  name: "shareholders",
-  fieldset: {
-    legend: {
-      text: " ",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
-
+     idPrefix: "share-type",
+     name: "share-type",
+     fieldset: {
+       legend: {
+         text: 'What is the class of share?',
+         isPageHeading: true,
+         classes: "govuk-fieldset__legend--l"
+       }
+     },
+        hint: {
+        text: "You can use any name for the share type, but listed below are some standard names that te majority of companies use."
+        },
+        items: [
+          {
+            value: "ordinary",
+            text: "Ordinary",
+            hint: {
+              text: "Commonly used when shareholders are given the right to vote abd receive dividends."
+            }
+          },
+          {
+            value: "ordinary-a",
+            text: "Ordinary A",
+            hint: {
+              text: "Commonly used when theres a difference in share value or rights to Ordinary shares."
+            }
+          },
+          {
+            value: "redeemable",
+            text: "Redeemable",
+            hint: {
+              text: "Commonly used when companies are able to buy back shares."
+            }
+          },
+          {
+            value: "preference",
+            text: "Preference",
+            hint: {
+              text: "Commonly used when shareholders dividend payments are prioritised over Ordinary shareholders."
+            }
+          },
+          {
+            value: "other",
+            text: "Other"
+          }
+        ]
+      }) }}
         {{ govukButton({
           text: "Save and continue"
         }) }}

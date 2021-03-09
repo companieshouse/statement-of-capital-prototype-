@@ -23,8 +23,7 @@ router.get('/change-answer', function (req, res) {
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  const change = req.session.data['form-code']
-
+  const change = req.session.data['form']
   if (change === 'SH01') {
     res.redirect('/user-journeys/SH01/date-of-allotment')
   } else {

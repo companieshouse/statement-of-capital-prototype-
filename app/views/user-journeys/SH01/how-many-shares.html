@@ -14,13 +14,26 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">(SH01) Return of allotment of shares</span>
-      <h1 class="govuk-heading-l">How many shares are being alloted?</h1>
+      {% if data['form'] === 'SH01' %}
+        <span class="govuk-caption-l">
+          (SH01) Return of allotment of shares</span>
+
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        <span class="govuk-caption-l">
+          (SH06) Notify a cancellation of shares</span>
+      {% endif %}
+
+      {% set LegendHtml %}
+      {% if data['form'] === 'SH01' %}
+        How many shares are being alloted?
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        How many shares are being cancelled?
+      {% endif %}
+      {% endset -%}
 
       <form class="form" action="choose-a-value" method="get">
-        <p class="govuk-body">As the only shareholder, they'll own 100% of the company regardless of how many shares you choose.</p>
-        <p class="govuk-body">You only need to choose more than one share if you want to split ownership with others in future.</p>
-        <p class="govuk-body">You can add more shares after the company is registered.</p>
 
         {{ govukRadios({
   classes: "govuk-radios",
@@ -28,9 +41,9 @@
   name: "shareholders",
   fieldset: {
     legend: {
-      text: "Number of shares",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
+      text: LegendHtml,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
