@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want to use the most common type of shares?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">(SH01) Return of allotment of shares</span>
+
+      <form class="form" action="how-many-shares" method="get">
+
+        {{ govukRadios({
+     idPrefix: "share-type",
+     name: "share-type",
+     fieldset: {
+       legend: {
+         text: "What would you like to name share type 1?",
+         isPageHeading: true,
+         classes: "govuk-fieldset__legend--l"
+       }
+     },
+        hint: {
+        text: "You can use any name for the share type, but listed below are some standard names that te majority of companies use."
+        },
+        items: [
+          {
+            value: "ordinary",
+            text: "Ordinary",
+            hint: {
+              text: "Commonly used when shareholders are given the right to vote abd receive dividends."
+            }
+          },
+          {
+            value: "ordinary-a",
+            text: "Ordinary A",
+            hint: {
+              text: "Commonly used when theres a difference in share value or rights to Ordinary shares."
+            }
+          },
+          {
+            value: "redeemable",
+            text: "Redeemable",
+            hint: {
+              text: "Commonly used when companies are able to buy back shares."
+            }
+          },
+          {
+            value: "preference",
+            text: "Preference",
+            hint: {
+              text: "Commonly used when shareholders dividend payments are prioritised over Ordinary shareholders."
+            }
+          },
+          {
+            value: "other",
+            text: "Other"
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
