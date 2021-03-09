@@ -14,10 +14,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">(SH01) Return of allotment of shares</span>
+      {% if data['form'] === 'SH01' %}
+        <span class="govuk-caption-l">
+          (SH01) Return of allotment of shares</span>
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        <span class="govuk-caption-l">
+          (SH06) Notify a cancellation of shares</span>
+      {% endif %}
+
       <h1 class="govuk-heading-l">Choose a value for each share</h1>
+
       <form class="form" action="check-your-answers" method="get">
-        <p class="govuk-body">Shareholdrs must pay the value of all the shares they own. Choosing a low share value means they'll pay less.</p>
+        <p class="govuk-body">Shareholders must pay the value of all the shares they own. Choosing a low share value means they'll pay less.</p>
         <p class="govuk-body">This payment covers shareholders for situations such as the company being closed down.</p>
 
         {{ govukInsetText({

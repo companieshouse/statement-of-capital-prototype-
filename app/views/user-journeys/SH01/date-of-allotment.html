@@ -15,28 +15,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="most-common-type" method="get">
-        <span class="govuk-caption-l">(SH01) Return of allotment of shares</span>
-        <h1 class="govuk-heading-l">When were the shares alloted?</h1>
+      <form class="form" action="share-type" method="get">
+        {% if data['form'] === 'SH01' %}
+          <span class="govuk-caption-l">
+            (SH01) Return of allotment of shares</span>
+        {% endif %}
+        {% if data['form'] === 'SH06' or data['form'] == null %}
+          <span class="govuk-caption-l">
+            (SH06) Notify a cancellation of shares</span>
+        {% endif %}
+
+        {% set LegendHtml %}
+        {% if data['form'] === 'SH01' %}
+          When were the shares alloted?
+        {% endif %}
+        {% if data['form'] === 'SH06' or data['form'] == null %}
+          When were the shares cancelled?
+        {% endif %}
+        {% endset -%}
 
         {{ govukDateInput({
-id: "passport-issued",
-namePrefix: "passport-issued",
+id: "date-of-change",
+namePrefix: "date-of-change",
 fieldset: {
 legend: {
-text: "Allotment date (or period start)",
+text: LegendHtml,
 isPageHeading: false,
-classes: "govuk-fieldset__legend--s"
+classes: "govuk-fieldset__legend--l"
 }
 },
 hint: {
 text: "For example, 12 11 2007"
 }
 }) }}
-
-        {{ govukDateInput({
-id: "passport-issued",
-namePrefix: "passport-issued",
+        {% if data['form'] === 'SH01' %}
+          {{ govukDateInput({
+id: "date-of-change",
+namePrefix: "date-of-change",
 fieldset: {
 legend: {
 text: "Allotment period ended (optional)",
@@ -45,7 +60,7 @@ classes: "govuk-fieldset__legend--s"
 }
 }
 }) }}
-
+        {% endif %}
         {{ govukButton({
           text: "Save and continue"
         }) }}
