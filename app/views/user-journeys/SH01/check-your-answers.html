@@ -4,17 +4,15 @@
   Check the statement of capital
 {% endblock %}
 
-{% block backLink %}
-  {{ govukBackLink({
-    text: "Back",
-  href: "javascript:history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      {% block backLink %}
+        {{ govukBackLink({
+          text: "Back",
+        href: "javascript:history.back()"
+        }) }}
+      {% endblock %}
       <form action="check-the-statement-of-capital" method="post">
 
         <h1 class="govuk-heading-l">Check your answers</h1>
@@ -154,6 +152,9 @@
         ]
       }) }}
 
+        {{ govukInsetText({
+        text: "We'll assume that each shareholder has paid the value of their shares to the company. If they haven't, they'll need to do so."
+      }) }}
       </div>
     </div>
 

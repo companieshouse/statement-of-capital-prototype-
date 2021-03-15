@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Update Share Capital
 {% endblock %}
 
 {% block content %}
@@ -9,11 +9,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Update a Statement of Capital
+        Update Share Capital
         <span class="govuk-caption-xl">{{releaseVersion}}</span>
       </h1>{{releaseVersion | log }}
 
-      <h2 class="govuk-heading-m">SH01 user journey</h2>
+      <h2 class="govuk-heading-m">Common user journey</h2>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -33,19 +33,18 @@
         </li>
 
         <li>
-          <a href="change">Make a change</a>
+          <a href="/template-pages/default-pages/change">Make a change</a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m">Dynamic pages for user journey</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="date-of-allotment">Date of ..</a>
         </li>
         <li>
-          <a href="date-of-allotment">Date of allotment</a>
+          <a href="share-type">Share type</a>
         </li>
-        <li>
-          <a href="most-common-type">Most common type</a>
-        </li>
-        <ul>
-          <li>
-            <a href="no/share-type">Share type</a>
-          </li>
-        </ul>
         <li>
           <a href="how-many-shares">How many shares</a>
         </li>
@@ -53,10 +52,13 @@
           <a href="choose-a-value">Choose a value</a>
         </li>
         <li>
-          <a href="check-your-answers.html">Check your answers</a>
+          <a href="check-your-answers">Check your answers</a>
         </li>
         <li>
-          <a href="check-the-statement-of-capital.html">Check the statement of capital</a>
+          <a href="check-the-statement-of-capital">Check the statement of capital</a>
+        </li>
+        <li>
+          <a href="check-the-long-statement-of-capital">Check the long statement of capital</a>
         </li>
       </ul>
     </div>
