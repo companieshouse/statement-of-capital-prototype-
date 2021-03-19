@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you need to attach a special resolution?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['form'] === 'SH01' %}
+        <span class="govuk-caption-l">
+          (SH01) Return of allotment of shares</span>
+
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        <span class="govuk-caption-l">
+          (SH06) Notify a cancellation of shares</span>
+      {% endif %}
+
+      <form class="form" action="need-resolution-answer" method="post">
+
+        {{ govukRadios({
+     idPrefix: "need-resolution",
+     name: "need-resolution",
+     fieldset: {
+       legend: {
+         text: "Do you need to attach a special resolution?",
+         isPageHeading: true,
+         classes: "govuk-fieldset__legend--l"
+       }
+     },
+        hint: {
+        html: "<p class='govuk-body'>You may need a special resolution to change your company’s share structure. This includes if you:</p>
+<ul class='govuk-list govuk-list--bullet'>
+  <li>change the number of shares the company has and their total value - this is your ‘share capital’ (the part of your company’s money that comes from shares)</li>
+  <li>change how your shares are distributed
+</li>
+  <li>cancel any of your shares
+</li>
+<li>change (‘denominate’) your shares into other currencies
+</li>
+</ul>"
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

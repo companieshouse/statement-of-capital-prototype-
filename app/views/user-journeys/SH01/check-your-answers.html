@@ -59,7 +59,7 @@
         ]
       }) }}
 
-        <h2 class="govuk-heading-m">Share details</h2>
+        <h2 class="govuk-heading-m">Shares alloted</h2>
 
         {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -151,7 +151,9 @@
           }
         ]
       }) }}
-
+        <p>
+          <a class="govuk-link" href="date-of-allotment">Add another allotment</a>
+        </p>
         {{ govukInsetText({
         text: "We'll assume that each shareholder has paid the value of their shares to the company. If they haven't, they'll need to do so."
       }) }}
@@ -159,7 +161,7 @@
     </div>
 
     {{ govukButton({
-text: "Continue"
+text: "Confirm and continue"
 }) }}
   </form>
 </div>

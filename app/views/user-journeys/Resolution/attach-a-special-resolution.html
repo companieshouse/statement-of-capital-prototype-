@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Attach a special resolution
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['form'] === 'SH01' %}
+        <span class="govuk-caption-l">
+          (SH01) Return of allotment of shares</span>
+
+      {% endif %}
+      {% if data['form'] === 'SH06' or data['form'] == null %}
+        <span class="govuk-caption-l">
+          (SH06) Notify a cancellation of shares</span>
+      {% endif %}
+
+      <form class="form" action="how-many-shares" method="get">
+
+        <h1 class="govuk-heading-l">Documents you must provide</h1>
+        <p class="govuk-body">
+          You must include a notice about the change you’ve made and a statement declaring:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the company’s total number of shares</li>
+          <li>
+            the total value of those shares</li>
+          <li>
+            how many shares have been paid for or not paid for</li>
+        </ul>
+        <p class="govuk-body">This is sometimes known as a ‘statement of capital’.</p>
+
+        <p class="govuk-body">
+          Your shares may be normal (‘ordinary’) or have special rights or restrictions.</p>
+
+        <p class="govuk-body">For each type of share your company has, you must declare:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the rights that come with it</li>
+          <li>how many of the shares are issued</li>
+          <li>their total value before any additional costs are added</li>
+        </ul>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
