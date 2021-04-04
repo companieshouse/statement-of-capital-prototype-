@@ -19,7 +19,7 @@
           (SH01) Return of allotment of shares</span>
 
       {% endif %}
-      {% if data['form'] === 'SH06' or data['form'] == null %}
+      {% if data['form'] === 'SH06' %}
         <span class="govuk-caption-l">
           (SH06) Notify a cancellation of shares</span>
       {% endif %}
@@ -30,6 +30,9 @@
       {% endif %}
       {% if data['form'] === 'SH06' or data['form'] == null %}
         How many shares are being cancelled?
+      {% endif %}
+      {% if data['form'] == null %}
+        How many shares?
       {% endif %}
       {% endset -%}
 

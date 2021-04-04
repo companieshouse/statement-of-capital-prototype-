@@ -14,22 +14,31 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
       {% if data['form'] === 'SH01' %}
         <span class="govuk-caption-l">
           (SH01) Return of allotment of shares</span>
-
       {% endif %}
-      {% if data['form'] === 'SH06' or data['form'] == null %}
+
+      {% if data['form'] === 'SH06' %}
         <span class="govuk-caption-l">
           (SH06) Notify a cancellation of shares</span>
       {% endif %}
+
       {% set LegendHtml %}
+
       {% if data['form'] === 'SH01' %}
         What type of shares would you like to allot?
       {% endif %}
-      {% if data['form'] === 'SH06' or data['form'] == null %}
+
+      {% if data['form'] === 'SH06'%}
         What type of shares would you like to cancel?
       {% endif %}
+
+      {% if data['form'] == null %}
+        What type of shares would you like to use?
+      {% endif %}
+
       {% endset -%}
       <form class="form" action="how-many-shares" method="get">
 

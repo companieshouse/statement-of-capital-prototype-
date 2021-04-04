@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check the statement of capital
+  Edit the statement of capital
 {% endblock %}
 
 {% block backLink %}
@@ -15,8 +15,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="check-the-statement-of-capital" method="post">
-        <h1 class="govuk-heading-l">Check the Statement of Capital</h1>
+      <form action="/default-pages/statement-of-capital" method="post">
+        <h1 class="govuk-heading-l">Edit the Statement of Capital</h1>
         {% include "includes/statement-of-capital-edit.html" %}
 
         {{ govukButton({
