@@ -1,0 +1,134 @@
+<h2 class="govuk-heading-m">Statement of Capital (share capital)</h2>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+    {
+      key: {
+        text: "Class of shares"
+      },
+      value: {
+        text: "Ordinary"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "class"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Currency"
+      },
+      value: {
+        text: "GBP"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "currency"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Number alloted"
+      },
+      value: {
+        text: "100"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "alloted"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Aggregate nominal value"
+      },
+      value: {
+        text: '1000'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "value"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-m">Statement of capital (totals)</h2>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+  {
+    key: {
+      text: "Currency"
+    },
+    value: {
+      text: "GBP"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "currency"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "Number alloted"
+    },
+    value: {
+      text: "100"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "alloted"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "Aggregate nominal value"
+    },
+    value: {
+      text: '1000'
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "value"
+        }
+      ]
+    }
+    }
+  ]
+}) }}

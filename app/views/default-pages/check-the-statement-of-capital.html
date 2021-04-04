@@ -3,12 +3,9 @@
 {% block pageTitle %}
   Check the statement of capital
 {% endblock %}
+{% block beforeContent %}
 
-{% block backLink %}
-  {{ govukBackLink({
-    text: "Back",
-  href: "javascript:history.back()"
-  }) }}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}

@@ -4,18 +4,16 @@
   Check the statement of capital
 {% endblock %}
 
-{% block backLink %}
-  {{ govukBackLink({
-    text: "Back",
-  href: "javascript:history.back()"
-  }) }}
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="change" method="post">
+      <form action="/default-pages/confirmation" method="post">
 
         <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
