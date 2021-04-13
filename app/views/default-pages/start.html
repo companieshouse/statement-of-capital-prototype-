@@ -17,69 +17,35 @@
             {{ serviceName }}
           {% endif %}
         </h1>
-        <p class="govuk-body-l">Use this service to apply to remove a home address, or part of it, from a document on the Companies House public register.
+        <p class="govuk-body-l">Use this service to submit changes to a company’s share capital information, and to update the statement of capital.
         </p>
-        {{ govukWarningText({
-text: "You cannot ask to remove your company’s registered office address, even if it’s your home address.",
- iconFallbackText: "Warning"
-}) }}
 
-        {{ govukInsetText({
-  text: "It costs £32 to remove your home address from each document. For now, you can only remove your home address from one document at a time using this online service."
-}) }}
-        <h3 class="govuk-heading-m">What you'll need</h3>
-        <p class="govuk-body">If you already know which PDF document shows your home address, you'll need to tell us the document details. If you do not know the details or you're not sure which document your home address appears on, you must check the
-          <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.</p>
-        <p class="govuk-body govuk-!-font-weight-bold">You'll need to make a note of the:</p>
+        <p class="govuk-body govuk-!-font-weight-bold">You can only use this service for:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>document filing type</li>
-          <li>document description</li>
-          <li>date the document was added to the register</li>
+          <li>an allotment of shares</li>
+          <li>a cancellation of shares</li>
+          <li>the redesignation of shares</li>
+          <li>a variation of rights attached to shares</li>
         </ul>
 
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Where can I find the document details?
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            View the PDF documents in the company filing history on the
-            <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>
-            to find out which documents contain your home address.
-            <br>
-            <br>
-            <p class="govuk-body govuk-!-font-weight-bold">Document filing type</p>
-            <p class="govuk-body">In the filing history, select 'Show filing type'. A new column will appear in the filing history called 'Type'.</p>
+        <p class="govuk-body">Any other updates to share capital information will need to be submitted using
+          <a href="https://www.gov.uk/government/collections/forms-to-update-shares" class="govuk-link">the relevant paper form</a>.
+        </p>
 
-            <p class="govuk-body govuk-!-font-weight-bold">Document description</p>
-            <p class="govuk-body">This is in the 'Description' column in the filing history.</p>
 
-            <p class="govuk-body govuk-!-font-weight-bold">Date the document was added to the register</p>
-            <p class="govuk-body">This is in the 'Date' column in the filing history.</p>
-          </div>
-
-        </details>
-
-        <p class="govuk-body govuk-!-font-weight-bold">You'll also need:</p>
+        <p class="govuk-body govuk-!-font-weight-bold">To update share capital information, you'll need:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>the applicant’s name, date of birth and any previous names used on the Companies House register in the last 20 years</li>
-          <li>a different address to replace the home address, unless the company is closed or the applicant is no longer acting for the company</li>
-          <li>the company name and number</li>
-          <li>a credit or debit card</li>
+          <li>to sign in to or create a Companies House account, which is different from a WebFiling account</li>
+          <li>the company number</li>
+          <li>the company authentication code</li>
         </ul>
-        <p class="govuk-body">It takes around 10 minutes to complete this application.</p>
+
         {{ govukButton({
 text: "Start now",
 classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
 isStartButton: true
 }) }}
-        <h2 class="govuk-heading-m">Before you start</h2>
-        <p class="govuk-body">Check the
-          <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01/list-of-documents" class="govuk-link">list of documents you can apply to remove your home address from</a>.
-        </p>
-        <p class="govuk-body">If you want to remove your home address from more than one document, you’ll need to start a new online application for each document or
-          <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01" class="govuk-link">complete a paper application (SR01)</a>.</p>
+
       </div>
 
       <div class="govuk-grid-column-one-third">
