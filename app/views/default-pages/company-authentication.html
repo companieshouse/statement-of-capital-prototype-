@@ -10,7 +10,6 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
-    {% include "includes/user-bar.html" %}
     {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
@@ -23,56 +22,19 @@
 
           <form action="statement-of-capital" method="post">
 
-            {% if errorNumber == true %}
-              {{ govukErrorSummary({
-                     titleText: "There is a problem",
-                     errorList: errorList
-                   }) }}
-            {% endif %}
-
-            {% if errorNumber == true %}
-              {{ govukInput({
+            {{ govukInput({
                 label: {
-                  text: "What is the company number?",
+                  text: "Enter the company authentication code",
                   isPageHeading: true,
                   classes: "govuk-label--l"
                 },
                 hint: {
-                  text: "This is the 8-character reference issued by Companies House when the company was set up."
-                },
-                errorMessage: {
-                  text: "Enter a company number"
+                  text: "To submit information for ABC Ltd you will need the company authentication code."
                 },
                 classes: "govuk-input--width-10",
                 id: "company-number",
                 name: "company-number"
               }) }}
-            {% else %}
-              {{ govukInput({
-                  label: {
-                    text: "What is the company number?",
-                    isPageHeading: true,
-                    classes: "govuk-label--l"
-                  },
-                  hint: {
-                    text: "This is the 8-character reference issued by Companies House when the company was set up."
-                  },
-                  classes: "govuk-input--width-10",
-                  id: "company-number",
-                  name: "company-number"
-                }) }}
-            {% endif %}
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Help with company number
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                You can find the company number by using the
-                <a href="https://staging.company-information.service.gov.uk/" class="govuk-link">Companies House service (opens in a new tab)</a>.
-              </div>
-            </details>
 
             {{ govukButton({
         text: "Continue"
