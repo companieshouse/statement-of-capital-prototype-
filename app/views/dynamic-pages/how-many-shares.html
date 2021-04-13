@@ -38,31 +38,18 @@
 
       <form class="form" action="choose-a-value" method="get">
 
-        {{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "shareholders",
-  name: "shareholders",
-  fieldset: {
-    legend: {
-      text: LegendHtml,
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "1share",
-      text: "1 share"
-    },
-    {
-      value: "other",
-      text: "Other amount"
-    }
-  ]
-}) }}
+        {{ govukInput({
+          label: {
+            text: LegendHtml,
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "event-name",classes: "govuk-input--width-10",
+          name: "event-name"
+        }) }}
 
         {{ govukButton({
-          text: "Save and continue"
+          text: "Continue"
         }) }}
 
       </form>
