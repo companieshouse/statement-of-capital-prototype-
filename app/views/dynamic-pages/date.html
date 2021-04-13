@@ -18,7 +18,7 @@
       <form class="form" action="share-type" method="get">
         {% if data['form'] === 'SH01' %}
           <span class="govuk-caption-l">
-            (SH01) Return of allotment of shares</span>
+            Return of allotment of shares</span>
         {% endif %}
         {% if data['form'] === 'RP04' %}
           <span class="govuk-caption-l">
@@ -31,10 +31,10 @@
 
         {% set LegendHtml %}
         {% if data['form'] === 'SH01' %}
-          When were the shares alloted?
+          When were the shares allotted?
         {% endif %}
         {% if data['form'] === 'RP04' %}
-          When were the shares alloted?
+          When were the shares allotted?
         {% endif %}
         {% if data['form'] === 'SH06' or data['form'] == null %}
           When were the shares cancelled?
@@ -69,7 +69,7 @@ classes: "govuk-fieldset__legend--s"
 }) }}
         {% endif %}
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
 
       </form>

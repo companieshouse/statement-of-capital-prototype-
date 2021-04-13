@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
       {% if data['form'] === 'SH01' %}
         <span class="govuk-caption-l">
-          (SH01) Return of allotment of shares</span>
+          Return of allotment of shares</span>
 
       {% endif %}
       {% if data['form'] === 'SH06' %}
@@ -26,7 +26,7 @@
 
       {% set LegendHtml %}
       {% if data['form'] === 'SH01' %}
-        How many shares are being alloted?
+        How many shares are being allotted?
       {% endif %}
       {% if data['form'] === 'SH06' or data['form'] == null %}
         How many shares are being cancelled?
@@ -49,7 +49,7 @@
         }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
 
       </form>

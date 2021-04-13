@@ -16,22 +16,16 @@
     <div class="govuk-grid-column-two-thirds">
       {% if data['form'] === 'SH01' %}
         <span class="govuk-caption-l">
-          (SH01) Return of allotment of shares</span>
+          Return of allotment of shares</span>
       {% endif %}
       {% if data['form'] === 'SH06' %}
         <span class="govuk-caption-l">
           (SH06) Notify a cancellation of shares</span>
       {% endif %}
 
-      <h1 class="govuk-heading-l">Choose a value for each share</h1>
+      <h1 class="govuk-heading-l">What is the value of each share?</h1>
 
       <form class="form" action="check-your-answers" method="get">
-        <p class="govuk-body">Shareholders must pay the value of all the shares they own. Choosing a low share value means they'll pay less.</p>
-        <p class="govuk-body">This payment covers shareholders for situations such as the company being closed down.</p>
-
-        {{ govukInsetText({
-   text: "Share value is not linked to how much the company is worth."
- }) }}
 
         {{ govukRadios({
   classes: "govuk-radios",
@@ -57,7 +51,7 @@
 }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
 
       </form>

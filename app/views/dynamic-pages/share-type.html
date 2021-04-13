@@ -17,12 +17,12 @@
 
       {% if data['form'] === 'SH01' %}
         <span class="govuk-caption-l">
-          (SH01) Return of allotment of shares</span>
+          Return of allotment of shares</span>
       {% endif %}
 
       {% if data['form'] === 'SH06' %}
         <span class="govuk-caption-l">
-          (SH06) Notify a cancellation of shares</span>
+          Notify a cancellation of shares</span>
       {% endif %}
 
       {% set LegendHtml %}
@@ -52,22 +52,19 @@
          classes: "govuk-fieldset__legend--l"
        }
      },
-        hint: {
-        text: "You can use any name for the share type, but listed below are some standard names that te majority of companies use."
-        },
         items: [
           {
             value: "ordinary",
             text: "Ordinary",
             hint: {
-              text: "Commonly used when shareholders are given the right to vote abd receive dividends."
+              text: "Commonly used when shareholders are given the right to vote and receive dividends."
             }
           },
           {
             value: "ordinary-a",
             text: "Ordinary A",
             hint: {
-              text: "Commonly used when theres a difference in share value or rights to Ordinary shares."
+              text: "Commonly used when there's a difference in share value or rights to Ordinary shares."
             }
           },
           {
@@ -92,7 +89,7 @@
       }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
 
       </form>
