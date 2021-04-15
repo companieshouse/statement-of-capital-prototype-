@@ -27,6 +27,21 @@
 
       <form class="form" action="check-your-answers" method="get">
 
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "contact-by-phone",
+          name: "contact-by-phone",
+          type: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Enter value of each share"
+          } ,
+  hint: {
+    text:"For example £1 or $0.50"
+  }
+        }) }}
+        {% endset -%}
+
         {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "shareholders",
@@ -45,7 +60,10 @@
     },
     {
       value: "other",
-      text: "Other"
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
     }
   ]
 }) }}

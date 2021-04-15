@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check the statement of capital
+  Review the statement of capital
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,29 +15,6 @@
       <form action="/soc-answer" method="post">
         <h1 class="govuk-heading-l">Review the statement of capital</h1>
         {% include "includes/statement-of-capital.html" %}
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "statement-of-capital",
-          name: "statement-of-capital",
-          fieldset: {
-            legend: {
-              html: "Is the statement of capital correct?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
 
         {{ govukButton({
 text: "Continue"
