@@ -23,7 +23,7 @@
           (SH06) Notify a cancellation of shares</span>
       {% endif %}
 
-      <form class="form" action="prescribed-particulars" method="get">
+      <form class="form" action="check-your-answers" method="get">
 
         {% set otherHtml %}
         {{ govukInput({
@@ -32,10 +32,10 @@
           type: "tel",
           classes: "govuk-!-width-one-third",
           label: {
-            text: "Enter value of each share"
+            text: "Enter details of the prescribed particulars"
           } ,
   hint: {
-    text:"For example £1 or $0.50"
+    text:"For example ..."
   }
         }) }}
         {% endset -%}
@@ -46,15 +46,15 @@
   name: "shareholders",
   fieldset: {
     legend: {
-      text: "What is the value of each share?",
+      text: "What are the prescribed particulars of rights attached to the shares?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
     {
-      value: "£1",
-      text: "£1"
+      value: "Full rights",
+      text: "Each share has full rights in the company with respect to voting, dividends and distributions"
     },
     {
       value: "other",
