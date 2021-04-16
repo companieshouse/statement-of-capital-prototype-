@@ -15,31 +15,7 @@
 
       <form action="/soc-answer" method="post">
         <h1 class="govuk-heading-l">Check the Statement of Capital</h1>
-        {% include "includes/long-statement-of-capital.html" %}
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "statement-of-capital",
-          name: "statement-of-capital",
-          fieldset: {
-            legend: {
-              html: "Is the statement of capital correct?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
+        {% include "includes/long-statement-of-capital-css.html" %}
         {{ govukButton({
 text: "Continue"
 }) }}

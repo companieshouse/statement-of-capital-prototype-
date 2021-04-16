@@ -1,0 +1,123 @@
+<div class="govuk-summary-card govuk-!-margin-bottom-4">
+  <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+    <p class="govuk-!-font-weight-bold govuk-!-margin-0">GALEA, Lucian Teodor</p>
+
+    <strong class="govuk-tag govuk-tag--green">
+      Active
+    </strong>
+
+  </div>
+  <div style="display: flex" class="govuk-!-padding-1">
+    <dl style="display: block" class="govuk-summary-list govuk-!-margin-3">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Correspondence address</dt>
+        <dd class="govuk-summary-list__value">
+
+          52, Avocet Close, Rugby, Warwickshire, CV23 0WU
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Role</dt>
+        <dd class="govuk-summary-list__value">
+          Director
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Appointed on</dt>
+        <dd class="govuk-summary-list__value" style="direction:rtl; text-align: left">
+
+          2019 12 03
+        </dd>
+      </div>
+    </dl>
+  </div>
+  <div>
+
+    <div style="display: flex">
+      <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+        <p class="govuk-body">
+          <a href="change/change?director=/company/12345678/appointments/3G0mKCCgQS8dxi-FjJ_lV6wAKDQ" class="govuk-link govuk-link--no-visited-state">Update officer details</a>
+        </p>
+      </div>
+      <div class="govuk-!-padding-top-5">
+        <p class="govuk-body">
+          <a href="remove/remove?director=/company/12345678/appointments/3G0mKCCgQS8dxi-FjJ_lV6wAKDQ" class="govuk-link govuk-link--no-visited-state">Remove officer</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ govukTable({
+caption: "Statement of capital (share capital)",
+firstCellIsHeader: false
+
+rows: [
+[
+{
+text: "Class of shares"
+},
+{
+text: "Ordinary"
+}
+],
+[
+{
+text: "Currency"
+},
+{
+text: "GBP"
+}
+],
+[
+{
+text: "Number allotted"
+},
+{
+text: "100"
+}
+],
+[
+{
+text: "Aggregate nominal value"
+},
+{
+text: "100"
+}
+]
+]
+}) }}
+<p>Each share has full rights in the company with respect to voting, dividends and distributions.</p>
+
+{{ govukTable({
+caption: "Statement of capital (totals)",
+firstCellIsHeader: false,
+rows: [
+[
+{
+text: "Currency"
+},
+{
+text: "GBP"
+}
+],
+[
+{
+text: "Total number of shares"
+},
+{
+text: "100"
+}
+],
+[
+{
+text: "Total aggregate nominal value"
+},
+{
+text: "100"
+}
+]
+]
+}) }}
