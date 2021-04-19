@@ -11,7 +11,7 @@ router.get('/change-answer', function (req, res) {
 
   const change = req.session.data['form']
   if (change === 'SH10') {
-    res.redirect('/user-journeys/not-developed-yet')
+    res.redirect('/user-journeys/SH10/date')
   } else {
     res.redirect('/dynamic-pages/date')
   }
@@ -26,7 +26,7 @@ router.get('/soc-answer', function (req, res) {
   if (soc === 'yes') {
     res.redirect('default-pages/confirmation')
   } else {
-    res.redirect('default-pages/update')
+    res.redirect('default-pages/change')
   }
 })
 

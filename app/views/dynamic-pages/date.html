@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="share-type" method="get">
+      <form class="form" action="date-answer" method="get">
         {% if data['form'] === 'SH01' %}
           <span class="govuk-caption-l">
             Return of allotment of shares</span>
@@ -28,6 +28,10 @@
           <span class="govuk-caption-l">
             (SH06) Notify a cancellation of shares</span>
         {% endif %}
+        {% if data['form'] === 'SH10' %}
+          <span class="govuk-caption-l">
+            A change to the rights attached to shares</span>
+        {% endif %}
 
         {% set LegendHtml %}
         {% if data['form'] === 'SH01' %}
@@ -38,6 +42,9 @@
         {% endif %}
         {% if data['form'] === 'SH06' or data['form'] == null %}
           When were the shares cancelled?
+        {% endif %}
+        {% if data['form'] === 'SH10' %}
+          What is the date of variation of rights?
         {% endif %}
         {% endset -%}
 
@@ -57,8 +64,8 @@ text: "For example, 12 11 2007"
 }) }}
         {% if data['form'] === 'SH01' %}
           {{ govukDateInput({
-id: "date-of-change",
-namePrefix: "date-of-change",
+id: "date-ended",
+namePrefix: "date-ended",
 fieldset: {
 legend: {
 text: "Allotment period ended (optional)",
