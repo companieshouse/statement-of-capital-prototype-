@@ -34,21 +34,9 @@ hint: {
 text: "For example, 12 11 2007"
 }
 }) }}
-        {% if data['form'] === 'SH01' %}
-          {{ govukDateInput({
-id: "date-ended",
-namePrefix: "date-ended",
-fieldset: {
-legend: {
-text: "Allotment period ended (optional)",
-isPageHeading: false,
-classes: "govuk-fieldset__legend--s"
-}
-}
-}) }}
-        {% endif %}
+
         {{ govukButton({
-          text: "Save and continue"
+          text: "Continue"
         }) }}
 
       </form>
