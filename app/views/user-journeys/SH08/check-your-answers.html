@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check the statement of capital
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/default-pages/new-statement-of-capital" method="post">
+
+        <h1 class="govuk-heading-l">Check your answers for ...</h1>
+
+        <h2 class="govuk-heading-m">Company details</h2>
+
+        {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Company number"
+            },
+            value: {
+              text: "75896541"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Company name"
+            },
+            value: {
+              html: "ABC Ltd"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+        <h2 class="govuk-heading-m">Share details</h2>
+
+        {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Type of change"
+            },
+            value: {
+              text: "A change to the rights attached to shares"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "previous application number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of variation of rights"
+            },
+            value: {
+              text: "05/03/2021"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "licence type"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Prescribed particulars"
+            },
+            value: {
+              text: "Each share has full rights in the company with respect to voting, dividends and distributions"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "licence period"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      </div>
+    </div>
+
+    {{ govukButton({
+text: "Continue"
+}) }}
+  </form>
+</div>
+</div>
+{% endblock %}

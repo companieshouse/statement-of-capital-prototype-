@@ -12,6 +12,12 @@ router.get('/change-answer', function (req, res) {
   const change = req.session.data['form']
   if (change === 'SH10') {
     res.redirect('/user-journeys/SH10/date')
+  }
+  if (change === 'RP04') {
+    res.redirect('/user-journeys/confirmation-statement/edit-the-statement-of-capital')
+  }
+  if (change === 'SH08') {
+    res.redirect('/user-journeys/SH08/date')
   } else {
     res.redirect('/dynamic-pages/date')
   }

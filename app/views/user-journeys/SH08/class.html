@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Class(es) of shares
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        A re-designation of a class of shares</span>
+      <h1 class="govuk-heading-xl">
+
+        Class(es) of shares
+
+      </h1>
+      <form class="form" action="check-your-answers" method="get">
+
+        {{ govukSummaryList({
+rows: [
+{
+  key: {
+    text: "Existing class/description of shares"
+  },
+  value: {
+    text: "Ordinary A1"
+  }
+}
+]
+}) }}
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "contact-by-phone",
+          name: "contact-by-phone",
+          type: "tel",
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter a type of share"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+        idPrefix: "share-type",
+        name: "share-type",
+        fieldset: {
+        legend: {
+         text: 'Name (or new name) or other designation',
+         isPageHeading: false,
+         classes: "govuk-fieldset__legend--m"
+        }
+        },
+        items: [
+          {
+            value: "ordinary",
+            text: "Ordinary",
+            hint: {
+              text: "Commonly used when shareholders are given the right to vote and receive dividends."
+            }
+          },
+          {
+            value: "ordinary-a",
+            text: "Ordinary A",
+            hint: {
+              text: "Commonly used when there's a difference in share value or rights to Ordinary shares."
+            }
+          },
+          {
+            value: "redeemable",
+            text: "Redeemable",
+            hint: {
+              text: "Commonly used when companies are able to buy back shares."
+            }
+          },
+          {
+            value: "preference",
+            text: "Preference",
+            hint: {
+              text: "Commonly used when shareholders dividend payments are prioritised over Ordinary shareholders."
+            }
+          },
+          {
+            value: "other",
+            text: "Other",
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
