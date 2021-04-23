@@ -26,28 +26,15 @@
 
       <form class="form" action="how-many-shares" method="get">
 
-        <h1 class="govuk-heading-l">Documents you must provide</h1>
-        <p class="govuk-body">
-          You must include a notice about the change you’ve made and a statement declaring:</p>
+        <h1 class="govuk-heading-l">Attach a special resolution</h1>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>the company’s total number of shares</li>
-          <li>
-            the total value of those shares</li>
-          <li>
-            how many shares have been paid for or not paid for</li>
-        </ul>
-        <p class="govuk-body">This is sometimes known as a ‘statement of capital’.</p>
-
-        <p class="govuk-body">
-          Your shares may be normal (‘ordinary’) or have special rights or restrictions.</p>
-
-        <p class="govuk-body">For each type of share your company has, you must declare:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>the rights that come with it</li>
-          <li>how many of the shares are issued</li>
-          <li>their total value before any additional costs are added</li>
-        </ul>
+        {{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file"
+  }
+}) }}
 
         {{ govukButton({
           text: "Continue"

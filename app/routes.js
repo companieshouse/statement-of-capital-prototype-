@@ -49,6 +49,19 @@ router.get('/update-answer', function (req, res) {
   }
 })
 
+router.get('/rights-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const rights = req.session.data['share-rights']
+  if (rights === 'yes') {
+    res.redirect('/user-journeys/SH10/date')
+  } else {
+    res.redirect('/user-journeys/SH08/check-your-answers')
+  }
+})
+
 router.get('/need-resolution-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
