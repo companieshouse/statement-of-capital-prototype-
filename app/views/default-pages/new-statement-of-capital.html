@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Review the new statement of capital
+  Review the statement of capital
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,32 +12,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/soc-answer" method="post">
-        <h1 class="govuk-heading-l">Review the updated statement of capital</h1>
+      <form action="change" method="post">
+        <h1 class="govuk-heading-l">Review the updated statement of capital for ABC Ltd</h1>
         {% include "includes/new-statement-of-capital.html" %}
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "statement-of-capital",
-          name: "statement-of-capital",
-          fieldset: {
-            legend: {
-              html: "Is the statement of capital correct?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
 
         {{ govukButton({
 text: "Continue"

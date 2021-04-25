@@ -26,24 +26,21 @@
       <form class="form" action="check-your-answers" method="get">
 
         {% set otherHtml %}
-        {{ govukInput({
-          id: "contact-by-phone",
-          name: "contact-by-phone",
-          type: "tel",
-          classes: "govuk-!-width-one-third",
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
           label: {
-            text: "Enter details of the prescribed particulars"
-          } ,
-  hint: {
-    text:"For example ..."
-  }
+            text: "Enter details of the prescribed particulars",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          }
         }) }}
         {% endset -%}
 
         {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "shareholders",
-  name: "shareholders",
+  idPrefix: "particulars",
+  name: "particulars",
   fieldset: {
     legend: {
       text: "What are the prescribed particulars of rights attached to the shares?",
@@ -67,7 +64,7 @@
 }) }}
 
         {{ govukButton({
-          text: "Save and continue"
+          text: "Continue"
         }) }}
 
       </form>
