@@ -75,4 +75,17 @@ router.get('/need-resolution-answer', function (req, res) {
   }
 })
 
+router.get('/another-update-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const update = req.session.data['another-update']
+  if (update === 'yes') {
+    res.redirect('/default-pages/change')
+  } else {
+    res.redirect('/default-pages/confirmation')
+  }
+})
+
 module.exports = router
