@@ -27,9 +27,8 @@
 
         {% set otherHtml %}
         {{ govukInput({
-          id: "contact-by-phone",
-          name: "contact-by-phone",
-          type: "tel",
+          id: "other-share-value",
+          name: "other-share-value",
           classes: "govuk-!-width-one-third",
           label: {
             text: "Enter value of each share"
@@ -42,8 +41,8 @@
 
         {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "shareholders",
-  name: "shareholders",
+  idPrefix: "share-value",
+  name: "share-value",
   fieldset: {
     legend: {
       text: "What is the value of each share?",

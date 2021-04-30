@@ -15,20 +15,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['form'] === 'SH01' %}
-        <span class="govuk-caption-l">
-          (SH01) Return of allotment of shares</span>
+        <span class="govuk-caption-l"></span>
 
-      {% endif %}
-      {% if data['form'] === 'SH06' or data['form'] == null %}
-        <span class="govuk-caption-l">
-          (SH06) Notify a cancellation of shares</span>
-      {% endif %}
+        <form class="form" action="how-many-shares" method="get">
 
-      <form class="form" action="how-many-shares" method="get">
+          <h1 class="govuk-heading-l">Attach the amended articles of association</h1>
 
-        <h1 class="govuk-heading-l">Attach the amended articles of association</h1>
-
-        {{ govukFileUpload({
+          {{ govukFileUpload({
   id: "file-upload-1",
   name: "file-upload-1",
   label: {
@@ -36,13 +29,13 @@
   }
 }) }}
 
-        {{ govukButton({
+          {{ govukButton({
           text: "Continue"
         }) }}
 
-      </form>
+        </form>
 
+      </div>
     </div>
-  </div>
 
-{% endblock %}
+  {% endblock %}
