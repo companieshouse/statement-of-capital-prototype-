@@ -23,50 +23,29 @@
           Notify a cancellation of shares</span>
       {% endif %}
 
-      <form class="form" action="prescribed-particulars" method="get">
+      <form class="form" action="choose-a-value" method="get">
 
         {% set otherHtml %}
         {{ govukInput({
           id: "other-share-value",
           name: "other-share-value",
-          classes: "govuk-!-width-one-third",
+          classes: "govuk-input--width-5",
           label: {
             text: "Enter value of each share"
-          } ,
-  hint: {
-    text:"For example 0.50 (USD)"
-  }
+          } 
         }) }}
         {% endset -%}
 
-        {{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "share-value",
-  name: "share-value",
-  fieldset: {
-    legend: {
-      text: "What is the value of each share?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "1",
-      text: "1 (GBP)"
-    },
-    {
-      value: "other",
-      text: "Other",
-      conditional: {
-        html: otherHtml
-      }
-    }
-  ]
-}) }}
+        <div class="govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-heading-l">What are the share's currency?</label>
+        <div id="currency" class="autocomplete-wrapper"></div>
+      </div>
+      <script src="/public/javascripts/accessible-autocomplete.js"></script>
+      <script src="/public/javascripts/currency.js"></script>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          classes: "govuk-!-margin-top-7"
         }) }}
 
       </form>
