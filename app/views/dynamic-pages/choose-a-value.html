@@ -25,45 +25,25 @@
 
       <form class="form" action="paid-and-unpaid" method="get">
 
-        {% set otherHtml %}
-        <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="cost-per-item">
-              What is the cost per item, in British pounds?
-            </label>
-          </h1>
-          <div class="govuk-input__wrapper">
-            <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
-            <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
-          </div>
-        </div>
-        {% endset -%}
-
-        {{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "share-value",
-  name: "share-value",
-  fieldset: {
-    legend: {
-      text: "What is the value of each share?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
+        {{ govukInput({
+  id: "cost-per-item",
+  name: "cost-per-item",
+  label: {
+    text: "What is the value of each share?",
+    classes: "govuk-label--l",
+    isPageHeading: true
   },
-  items: [
-    {
-      value: "1",
-      text: "1 (GBP)"
-    },
-    {
-      value: "other",
-      text: "Other",
-      conditional: {
-        html: otherHtml
-      }
-    }
-  ]
+  hint: {
+   text: "This is the price of the share when it was issued, not its current market value."
+ },
+  prefix: {
+    text: "£"
+  },
+  suffix: {
+    text: "(GBP)"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false
 }) }}
 
         {{ govukButton({
