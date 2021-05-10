@@ -16,45 +16,31 @@
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-
-            <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
-
-            {{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Company name"
-      },
-      value: {
-        text: "ABC Ltd"
-      }
-    },
-    {
-      key: {
-        text: "Company number"
-      },
-      value: {
-        text: "09164758"
-      }
-    },
-    {
-      key: {
-        text: "Status"
-      },
-      value: {
-        text: "Active"
-      }
-    },
-    {
-      key: {
-        text: "Incorporation date"
-      },
-      value: {
-        text: "26 June 2002"
-      }
-    }
-  ]
-}) }}
+          <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company name</dt>
+              <dd class="govuk-summary-list__value">ABC Ltd</dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company number</dt>
+              <dd class="govuk-summary-list__value">09164758</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company type</dt>
+              <dd class="govuk-summary-list__value">Ltd</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Status</dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">Active</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Incorporation date</dt>
+              <dd class="govuk-summary-list__value">26 June 2002</dd>
+            </div>
+          </dl>
             <p class="govuk-body">
               <a class="govuk-link" href="company-details">Change company</a>
             </p>
