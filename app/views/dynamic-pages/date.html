@@ -55,7 +55,7 @@
       </h1>
     </legend>
     <div id="shares-alloted-hint" class="govuk-hint">
-      For example, 12 11 2007
+      For example, 01 11 2007
     </div>
     <div class="govuk-date-input" id="shares-alloted-date">
       <div class="govuk-date-input__item">
@@ -63,21 +63,21 @@
           <label class="govuk-label govuk-date-input__label">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" max="31"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 date-inputs inputs" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" max="31"></div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-date-input__label">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" max="12"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 date-inputs inputs" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" max="12"></div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-date-input__label">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4 date-inputs inputs" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4"></div>
       </div>
     </div>
   </fieldset>
@@ -91,28 +91,37 @@
           <label class="govuk-label govuk-date-input__label" for="shares-alloted-day">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="shares-alloted-end-day" name="shares-alloted-end-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 inputs" id="shares-alloted-end-day" name="shares-alloted-end-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs"></div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-date-input__label" for="shares-alloted-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="shares-alloted-end-month" name="shares-alloted-end-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 inputs" id="shares-alloted-end-month" name="shares-alloted-end-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs"></div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-date-input__label" for="shares-alloted-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="shares-alloted-end-year" name="shares-alloted-end-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs"></div>
       </div>
     </div>
     </fieldset>
   {% endif %}
   </div>
-  
+  <div class="govuk-!-margin-top-5">
+  <h3 class="govuk-heading-s">Autofocus date input</h3>
+  Day
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+  Month
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+  Year
+  <input class="govuk-input govuk-date-input__input govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs" />
 </div>
+</div>
+
 
         
         {{ govukButton({
