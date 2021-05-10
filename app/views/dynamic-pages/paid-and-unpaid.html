@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How many shares are being alloted?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        Return of allotment of shares</span>
+
+      <form class="form" action="prescribed-particulars" method="get">
+        <h1 class="govuk-heading-l">
+          What are the amounts paid and unpaid for each share?
+        </h1>
+        {{ govukInput({
+          label: {
+            text: "What is the amount paid on each share?",
+            classes: "govuk-label",
+            isPageHeading: false
+          },
+          id: "amount-paid",
+          classes: "govuk-input--width-10",
+          name: "amount-paid"
+        }) }}
+
+        {{ govukInput({
+          label: {
+              text: "What is the amount unpaid on each share?",
+            classes: "govuk-label",
+            isPageHeading: false
+          },
+          id: "amount-unpaid",
+          classes: "govuk-input--width-10",
+          name: "amount-unpaid"
+        }) }}
+
+        {{ govukTextarea({
+          label: {
+              text: "Details of non-cash consideration (optional)",
+            classes: "govuk-label",
+            isPageHeading: false
+          },
+          id: "non-cash-consideration",
+          name: "non-cash-consideration"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
