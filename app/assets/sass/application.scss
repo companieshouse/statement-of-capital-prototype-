@@ -36,3 +36,12 @@ $govuk-assets-path: '/govuk/assets/';
 .prescribed-particulars-text {
   font-size: 19px;
 }
+
+.govuk-summary-list__row:last-child {
+  .govuk-summary-list__key {
+    border-bottom: 1px solid transparent;
+  } 
+  .govuk-summary-list__value {
+    border-bottom: 1px solid transparent;
+  } 
+}
