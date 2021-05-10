@@ -17,14 +17,14 @@
       <span class="govuk-caption-l">
         Return of allotment of shares</span>
 
-      <form class="form" action="choose-a-currency" method="get">
+      <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-heading-l">
           What are the amounts paid and unpaid for each share?
         </h1>
         {{ govukInput({
           label: {
             text: "What is the amount paid on each share?",
-            classes: "govuk-label--s",
+            classes: "govuk-label",
             isPageHeading: false
           },
           id: "amount-paid",
@@ -35,7 +35,7 @@
         {{ govukInput({
           label: {
               text: "What is the amount unpaid on each share?",
-            classes: "govuk-label--s",
+            classes: "govuk-label",
             isPageHeading: false
           },
           id: "amount-unpaid",
@@ -46,7 +46,7 @@
         {{ govukTextarea({
           label: {
               text: "Details of non-cash consideration (optional)",
-            classes: "govuk-label--s",
+            classes: "govuk-label",
             isPageHeading: false
           },
           id: "non-cash-consideration",
