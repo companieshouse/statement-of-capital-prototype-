@@ -47,34 +47,74 @@
           What is the date of variation of rights?
         {% endif %}
         {% endset -%}
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        When were the shares alloted?
+      </h1>
+    </legend>
+    <div id="shares-alloted-hint" class="govuk-hint">
+      For example, 12 11 2007
+    </div>
+    <div class="govuk-date-input" id="shares-alloted-date">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" max="31"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" max="12"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4"></div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="govuk-!-margin-top-5">
+    {% if data['form'] === 'SH01' %}
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-end-hint">
+    <h3 class="govuk-heading-s">Allotment period ended (optional)</h3>
+    <div class="govuk-date-input" id="shares-alloted-end">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="shares-alloted-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="shares-alloted-end-day" name="shares-alloted-end-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="shares-alloted-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="shares-alloted-end-month" name="shares-alloted-end-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="shares-alloted-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="shares-alloted-end-year" name="shares-alloted-end-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4"></div>
+      </div>
+    </div>
+    </fieldset>
+  {% endif %}
+  </div>
+  
+</div>
 
-        {{ govukDateInput({
-id: "date-of-change",
-namePrefix: "date-of-change",
-fieldset: {
-legend: {
-text: LegendHtml,
-isPageHeading: false,
-classes: "govuk-fieldset__legend--l"
-}
-},
-hint: {
-text: "For example, 12 11 2007"
-}
-}) }}
-        {% if data['form'] === 'SH01' %}
-          {{ govukDateInput({
-id: "date-ended",
-namePrefix: "date-ended",
-fieldset: {
-legend: {
-text: "Allotment period ended (optional)",
-isPageHeading: false,
-classes: "govuk-fieldset__legend--s"
-}
-}
-}) }}
-        {% endif %}
+        
         {{ govukButton({
           text: "Continue"
         }) }}
