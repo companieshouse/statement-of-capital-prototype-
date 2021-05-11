@@ -63,3 +63,9 @@ $govuk-assets-path: '/govuk/assets/';
   font-size: 1.1875rem;
   line-height: 1.31579;
 }
+
+@media only screen and (max-width: 640px) {
+  .date-input-autofocus-fields{
+    margin-right: 10px;
+  }
+}
