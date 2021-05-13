@@ -27,7 +27,7 @@
 
         {% set otherHtml %}
         <div class="govuk-input--width-30">
-          <label for="autocomplete-default" class="govuk-heading-l">What are the share's currency?</label>
+          <label for="autocomplete-default" class="govuk-label">Enter a currency</label>
           <div id="currency" class="autocomplete-wrapper"></div>
         </div>
         <script src="/public/javascripts/accessible-autocomplete.js"></script>
@@ -40,7 +40,7 @@
   name: "shareholders",
   fieldset: {
     legend: {
-      text: "What are the share's currency?",
+      text: "What is the currency of the shares?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -48,11 +48,11 @@
   items: [
     {
       value: "gbp",
-      text: "British pound, GBP (£)"
+      text: "£ (GBP)"
     },
     {
       value: "usd",
-      text: "United States dollar, USD ($)"
+      text: "$ (USD)"
     },
     {
       value: "other",
