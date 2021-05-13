@@ -3,7 +3,10 @@
 {% block pageTitle %}
   Update a company's share capital information
 {% endblock %}
-
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
