@@ -20,44 +20,34 @@
 
           <form action="/change-answer" method="post">
 
-            {{ govukRadios({
-              idPrefix: "form",
-              name: "form",
-              fieldset: {
-                legend: {
-                  text: "What update do you need to make?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--l"
-     }
-   },
-   items: [
-
-      {
-        value: "SH01",
-        text: "New shares have been issued"
-      },
-      {
-        value: "SH06",
-        text: "Shares have been cancelled"
-      },
-      {
-        value: "SH08",
-        text: "Shares have changed class"
-      },
-      {
-        value: "SH10",
-        text: "The rights attached to shares have changed"
-      },
-      {
-        value: "RP04",
-        text: "I need to correct an error on the statement of capital"
-      }
-    ]
-  }) }}
-
-            {{ govukButton({
-        text: "Continue"
-      }) }}
+             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What change has been made to the share capital?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="form-sh01" name="form" type="radio" value="SH01" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="form-sh01">
+          New shares have been issued
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="form-other" name="form" type="radio" value="other" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="form-other">
+          There’s been another change to share capital
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <p class="govuk-hint">Selecting this option will redirect you to WebFiling where you can do one, two, three.</a>
+      </div>
+    </div>
+    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+      Continue
+    </button>
+  </fieldset>
           </form>
 
         </div>
