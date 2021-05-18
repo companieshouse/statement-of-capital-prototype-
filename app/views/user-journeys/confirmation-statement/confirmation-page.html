@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Share capital update submitted</h1>
+        <div class="govuk-panel__body">
+          Your reference number is<br>
+          <strong>N4OBD-U2SGP</strong>
+        </div>
+      </div>
+
+      <p class="govuk-body">We have sent a confirmation email to
+        <strong>dthomas@gmail.com</strong>
+        which contains your reference number.</p>
+
+      <p class="govuk-body">We will email you within 2 working days to let you know if your update has been accepted. It will then be added to the company's filing history on the Companies House register.</p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/contact-companies-house">Contact Companies House</a>
+        if you do not receive an email within 2 working days.</p>
+
+    </div>
+  </div>
+
+  <h1 class="govuk-heading-m">What would you like to do next?</h1>
+
+  <p class="govuk-body">
+    <a target="_blank" href="task-list">Return to the Confirmation Statement service</a>
+  </p>
+
+  <p class="govuk-body">
+    <a href="/" class="govuk-link govuk-link--no-visited-state">Sign out</a>
+  </p>
+
+</div>
+
+{% endblock %}
