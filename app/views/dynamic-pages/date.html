@@ -14,8 +14,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      {% if data['form'] === 'SH01' %}
+      <form class="form" action="date-sh01" method="get">
+      {% else %}
       <form class="form" action="share-type" method="get">
+      {% endif %}
         {% if data['form'] === 'SH01' %}
           <span class="govuk-caption-l">
             Return of allotment of shares</span>
@@ -47,91 +50,127 @@
           What is the date of variation of rights?
         {% endif %}
         {% endset -%}
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        When were the shares issued?
-      </h1>
-    </legend>
-    <div id="shares-alloted-hint" class="govuk-hint">
-      For example, 01 11 2007
-    </div>
-    <div class="govuk-date-input" id="shares-alloted-date">
-      <div class="govuk-date-input__item govuk-!-padding-right-4">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label">
-            Day
-          </label>
-          <input style="display: none" aria-hidden="true"></div>
-      </div>
-      <div class="govuk-date-input__item ">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label">
-            Month
-          </label>
-          <input style="display: none" aria-hidden="true"></div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label">
-            Year
-          </label>
-          <input style="display: none" aria-hidden="true"></div>
-      </div>
-     <div>
-        <div>
-          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
-          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
-          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs" />
-        </div>
-      </div>
-    </div>
-  </fieldset>
-  <div class="govuk-!-margin-top-5">
-    {% if data['form'] === 'SH01' %}
-    <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-end-hint">
-    <h3 class="govuk-heading-s">When did the issue period end? (optional)</h3>
-    <div class="govuk-date-input" id="shares-alloted-date">
-      <div class="govuk-date-input__item govuk-!-padding-right-4">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label">
-            Day
-          </label>
-          <input style="display: none" aria-hidden="true"></div>
-      </div>
-      <div class="govuk-date-input__item ">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label">
-            Month
-          </label>
-          <input style="display: none" aria-hidden="true"></div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label">
-            Year
-          </label>
-          <input style="display: none" aria-hidden="true"></div>
-      </div>
-     <div>
-        <div>
-          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
-          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
-          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs" />
-        </div>
-      </div>
-    </div>
-    </fieldset>
-  {% endif %}
-  </div>
-</div>
+        
+        {% if data['form'] === 'SH01' %}
+        {# This div will show if the user is filing an SH01 #}
+          <form action="/date-sh01" method="post">
+             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Were shares issued with an end date?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sh01-end-date" name="sh01-end-date" type="radio" value="end-date" data-aria-controls="conditional-form">
+                  <label class="govuk-label govuk-radios__label" for="sh01-end-date">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sh01-no-end-date" name="sh01-end-date" type="radio" value="no-end-date" data-aria-controls="conditional-form-2">
+                  <label class="govuk-label govuk-radios__label" for="sh01-no-end-date">
+                    No
+                  </label>
+                </div>
+              <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                Continue
+              </button>
+            </fieldset>
+          </form>
 
-
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+        {% else %}
+        {# This div will show if the user is not filing an SH01 #}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              When were the shares issued?
+            </h1>
+          </legend>
+          <div id="shares-alloted-hint" class="govuk-hint">
+            For example, 01 11 2007
+          </div>
+          <div class="govuk-date-input" id="shares-alloted-date">
+            <div class="govuk-date-input__item govuk-!-padding-right-4">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label">
+                  Day
+                </label>
+                <input style="display: none" aria-hidden="true"></div>
+            </div>
+            <div class="govuk-date-input__item ">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label">
+                  Month
+                </label>
+                <input style="display: none" aria-hidden="true"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label">
+                  Year
+                </label>
+                <input style="display: none" aria-hidden="true"></div>
+            </div>
+          <div>
+              <div>
+                <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+                <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+                <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="govuk-!-margin-top-5">
+          {% if data['form'] !== 'SH01' %}
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-end-hint">
+          <h3 class="govuk-heading-s">When did the issue period end? (optional)</h3>
+          <div class="govuk-date-input" id="shares-alloted-date">
+            <div class="govuk-date-input__item govuk-!-padding-right-4">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label">
+                  Day
+                </label>
+                <input style="display: none" aria-hidden="true"></div>
+            </div>
+            <div class="govuk-date-input__item ">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label">
+                  Month
+                </label>
+                <input style="display: none" aria-hidden="true"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label">
+                  Year
+                </label>
+                <input style="display: none" aria-hidden="true"></div>
+            </div>
+          <div>
+              <div>
+                <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+                <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+                <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs" />
+              </div>
+            </div>
+          </div>
+          </fieldset>
+        {% endif %}
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
+        {% endif %}
+        </div>
+      </div>
+
+
+
 
       </form>
 

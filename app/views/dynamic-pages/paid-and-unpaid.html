@@ -17,47 +17,34 @@
       <span class="govuk-caption-l">
         Return of allotment of shares</span>
 
-      <form class="form" action="prescribed-particulars" method="get">
-        <h1 class="govuk-heading-l">
-          What are the amounts paid and unpaid for each share?
-        </h1>
-        {{ govukInput({
-          label: {
-            text: "What is the amount paid on each share?",
-            classes: "govuk-label",
-            isPageHeading: false
-          },
-          id: "amount-paid",
-          classes: "govuk-input--width-10",
-          name: "amount-paid"
-        }) }}
+      <form class="form" action="paid-and-unpaid-details" method="get">
+        <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Were the shares paid for in cash?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="cash" name="cash" type="radio" value="cash" data-aria-controls="conditional-cash">
+        <label class="govuk-label govuk-radios__label" for="cash">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="non-cash" name="cash" type="radio" value="non-cash" data-aria-controls="conditional-cash-2">
+        <label class="govuk-label govuk-radios__label" for="non-cash">
+          No
+        </label>
+      </div>
+    </div>
 
-        {{ govukInput({
-          label: {
-              text: "What is the amount unpaid on each share?",
-            classes: "govuk-label",
-            isPageHeading: false
-          },
-          id: "amount-unpaid",
-          classes: "govuk-input--width-10",
-          name: "amount-unpaid"
-        }) }}
-
-        {{ govukTextarea({
-          label: {
-              text: "Details of non-cash consideration (optional)",
-            classes: "govuk-label",
-            isPageHeading: false
-          },
- hint: {
-   text: "This is where shares have been paid for using something other than cash. For example, property, shares in another company, or equipment."
- },
-          id: "non-cash-consideration",
-          name: "non-cash-consideration"
-        }) }}
+  </fieldset>
+        
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          classes: "govuk-!-margin-top-4"
         }) }}
 
       </form>
