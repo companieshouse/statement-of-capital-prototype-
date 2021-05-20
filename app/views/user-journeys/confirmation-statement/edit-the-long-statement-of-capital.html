@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Edit the statement of capital
+{% endblock %}
+
+{% block backLink %}
+  {{ govukBackLink({
+    text: "Back",
+  href: "javascript:history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="confirmation-page" method="post">
+        <h1 class="govuk-heading-l">Edit the Statement of Capital</h1>
+        {% include "includes/long-statement-of-capital-edit.html" %}
+
+        {{ govukButton({
+text: "Submit"
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

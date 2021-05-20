@@ -8,7 +8,7 @@
         text: "Class of shares"
       },
       value: {
-        text: "Ordinary"
+        text: "A Ordinary"
       },
       actions: {
         items: [
@@ -42,7 +42,7 @@
         text: "Number of shares"
       },
       value: {
-        text: "100"
+        text: "967,774"
       },
       actions: {
         items: [
@@ -58,7 +58,7 @@
          text: "Value of each share"
        },
        value: {
-         text: "£1"
+         text: "£0.00001"
        },
        actions: {
          items: [
@@ -69,15 +69,51 @@
            }
          ]
        }
-     },
-    {
-      key: {
-        text: "Total value"
+     },{
+        key: {
+          text: "Total value"
+        },
+        value: {
+          text: "£0.967774"
+        }
       },
-      value: {
-        text: '£100'
-      }
-    }
+      {
+         key: {
+           text: "Total amount unpaid"
+         },
+         value: {
+           text: "£0"
+         },
+         actions: {
+           items: [
+             {
+               href: "#",
+               text: "Change",
+               visuallyHiddenText: "alloted"
+             }
+           ]
+         }
+       },
+       {
+          key: {
+            text: "Rights attached to the shares"
+          },
+          value: {
+            html: "<p>Voting: one vote per share</p>
+        <p>Dividends: each share is entitled to participate pari passu in dividend payment</p>
+        <p>Capital return: each share is entitled to participate in a distribution (including on winding up)</p>
+        <p>Redemption: no redemption rights</p>"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "alloted"
+              }
+            ]
+          }
+        }
   ]
 }) }}
 
