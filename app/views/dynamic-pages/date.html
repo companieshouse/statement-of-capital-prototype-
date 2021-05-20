@@ -19,22 +19,6 @@
       {% else %}
       <form class="form" action="share-type" method="get">
       {% endif %}
-        {% if data['form'] === 'SH01' %}
-          <span class="govuk-caption-l">
-            Return of allotment of shares</span>
-        {% endif %}
-        {% if data['form'] === 'RP04' %}
-          <span class="govuk-caption-l">
-            (RP04) Second filing of a document</span>
-        {% endif %}
-        {% if data['form'] === 'SH06' or data['form'] == null %}
-          <span class="govuk-caption-l">
-            Notify a cancellation of shares</span>
-        {% endif %}
-        {% if data['form'] === 'SH10' %}
-          <span class="govuk-caption-l">
-            A change to the rights attached to shares</span>
-        {% endif %}
 
         {% set LegendHtml %}
         {% if data['form'] === 'SH01' %}

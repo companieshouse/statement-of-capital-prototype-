@@ -17,7 +17,7 @@ router.get('/change-answer', function (req, res) {
     res.redirect('/user-journeys/confirmation-statement/edit-the-statement-of-capital')
   }
   if (change === 'other') {
-    res.redirect('https://www.gov.uk/government/collections/forms-to-update-shares')
+    res.redirect('/default-pages/change-stop-screen')
   }
   if (change === 'SH08') {
     res.redirect('/user-journeys/SH08/date')
