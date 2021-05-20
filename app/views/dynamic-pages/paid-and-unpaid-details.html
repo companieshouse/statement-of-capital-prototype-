@@ -16,9 +16,8 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">
         Return of allotment of shares</span>
-
-      <form class="form" action="prescribed-particulars" method="get">
       {% if data['cash'] === 'cash' %}
+      <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
             What amount for each share has been paid?
@@ -51,6 +50,7 @@
       </div>
 
       {% elif data['cash'] === 'non-cash'%}
+      <form class="form" action="prescribed-particulars" method="get">
       <h1 class="govuk-heading-l">
           What are the non cash considerations for each share?
         </h1>
@@ -66,6 +66,38 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+      {% elif data['cash'] === 'combo'%}
+            <form class="form" action="paid-and-unpaid-details-combo" method="get">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="cost-per-item">
+            What amount for each share has been paid?
+          </label>
+        </h1>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="amount-paid" name="amount-paid" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
+        </div>
+        <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Select a different currency
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <div class="govuk-input--width-30">
+            <label for="autocomplete-default" class="govuk-label">Enter a currency</label>
+            <div id="currency" class="autocomplete-wrapper"></div>
+          </div>
+          <script src="/public/javascripts/accessible-autocomplete.js"></script>
+          <script src="/public/javascripts/currency.js"></script>
+          </div>
+        </details>
+        <p class="govuk-!-font-weight-bold">£(total - paid) remains unpaid.</p>
+        <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
       {% else %}
         <p>Please select whetehr the shares were paid for in cash or non-cash</p>
       {% endif %}

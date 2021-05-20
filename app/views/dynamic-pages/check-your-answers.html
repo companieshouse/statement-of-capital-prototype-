@@ -173,6 +173,46 @@
             </a>
           </dd>
         </div>
+        {% elif data['cash'] === 'combo'%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Amount paid
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £50
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> amount paid</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Amount unpaid
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £0
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> amount unpaid</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Non cash considerations
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Details about non cash considerations for each share
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> non-cash considerations</span>
+            </a>
+          </dd>
+        </div>
         {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
