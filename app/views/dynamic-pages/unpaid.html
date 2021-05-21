@@ -18,7 +18,7 @@
       <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
-            What amount for each share has been unpaid?
+            What amount has been unpaid for each share?
           </label>
         </h1>
         <div class="govuk-input__wrapper">
@@ -64,10 +64,10 @@
           text: "Continue"
         }) }}
       {% elif data['cash'] === 'cash-and-non-cash'%}
-        <form class="form" action="paid-and-unpaid-details-combo" method="get">
+        <form class="form" action="non-cash-considerations" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
-            What amount for each share has been unpaid?
+            What amount has been unpaid for each share?
           </label>
         </h1>
         <div class="govuk-input__wrapper">

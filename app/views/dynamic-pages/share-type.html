@@ -43,61 +43,16 @@
           }
         }) }}
         {% endset -%}
-
-        {{ govukRadios({
-     idPrefix: "share-type",
-     name: "share-type",
-     fieldset: {
-       legend: {
-         text: LegendHtml,
-         isPageHeading: true,
-         classes: "govuk-fieldset__legend--l"
-       }
-     },
-     hint: {
-  text: "Choose from this list of standard share types or add another."
-},
-        items: [
-          {
-            value: "ordinary",
-            text: "Ordinary",
-            hint: {
-              text: "Commonly used when shareholders are given the right to vote and receive dividends."
-            }
-          },
-          {
-            value: "ordinary-a",
-            text: "Ordinary A",
-            hint: {
-              text: "Commonly used when there's a difference in share value or rights to Ordinary shares."
-            }
-          },
-          {
-            value: "redeemable",
-            text: "Redeemable",
-            hint: {
-              text: "Commonly used when companies are able to buy back shares."
-            }
-          },
-          {
-            value: "preference",
-            text: "Preference",
-            hint: {
-              text: "Commonly used when shareholders dividend payments are prioritised over Ordinary shareholders."
-            }
-          },
-          {
-            value: "other",
-            text: "Other",
-            conditional: {
-              html: otherHtml
-            }
-          }
-        ]
-      }) }}
+        <div class="govuk-input--width-30">
+          <h1 class="govuk-heading-l">Enter a share type</h1>
+          <div id="class" class="autocomplete-wrapper"></div>
+        </div>
+        <script src="/public/javascripts/accessible-autocomplete.js"></script>
+        <script src="/public/javascripts/share-class.js"></script>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          classes: "govuk-!-margin-top-5"
         }) }}
 
       </form>
