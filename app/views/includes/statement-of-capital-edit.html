@@ -1,6 +1,15 @@
-<h2 class="govuk-heading-m">Share capital</h2>
+<div class="govuk-summary-card govuk-!-margin-bottom-4">
+  <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+    <p class="govuk-!-font-weight-bold govuk-!-margin-0">Share class</p>
 
-{{ govukSummaryList({
+    <p class="govuk-body">
+      <a href="https://ewfpreprod.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">Remove class</a>
+    </p>
+
+  </div>
+  <div style="padding: 15px;">
+
+    {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
     {
@@ -81,9 +90,9 @@
   ]
 }) }}
 
-<h2 class="govuk-heading-m">Totals</h2>
+    <h2 class="govuk-heading-m">Totals</h2>
 
-{{ govukSummaryList({
+    {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
   {
@@ -113,3 +122,5 @@
     }
   ]
 }) }}
+  </div>
+</div>

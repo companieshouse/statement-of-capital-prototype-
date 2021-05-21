@@ -17,7 +17,13 @@
 
       <form action="confirmation-page" method="post">
         <h1 class="govuk-heading-l">Edit the Statement of Capital</h1>
-        {% include "includes/long-statement-of-capital-edit-2.html" %}
+        <h2 class="govuk-heading-m">GBP Pound Sterling</h2>
+        <br>
+
+        <p class="govuk-body">
+          <a href="https://ewfpreprod.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">Add a new share class</a>
+        </p>
+        {% include "includes/long-statement-of-capital-edit.html" %}
 
         {{ govukButton({
 text: "Submit"
