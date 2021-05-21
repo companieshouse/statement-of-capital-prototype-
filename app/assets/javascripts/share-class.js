@@ -1,4 +1,8 @@
 var classes = [
+	"A Ordinary",
+	"B Ordinary",
+	"C Ordinary",
+	"D Ordinary",
 	"Ordinary",
 	"Ordinary A",
 	"Ordinary B",
