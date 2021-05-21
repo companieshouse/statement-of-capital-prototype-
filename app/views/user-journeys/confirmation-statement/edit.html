@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Update the Share Capital</h1>
+
+      <h2 class="govuk-heading-m">GBP Pound Sterling</h2>
+      <br>
+
+      <p class="govuk-body">
+        <a href="https://ewfpreprod.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">Add a new share class</a>
+      </p>
+
+      {% include "includes/long-statement-of-capital-edit.html" %}
+    </div>
+
+  </div>
+
+</div>
+</div>
+{% endblock %}
