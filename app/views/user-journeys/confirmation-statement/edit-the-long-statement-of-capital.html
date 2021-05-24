@@ -17,13 +17,9 @@
 
       <form action="confirmation-page" method="post">
         <h1 class="govuk-heading-l">Edit the Statement of Capital</h1>
-        <h2 class="govuk-heading-m">GBP Pound Sterling</h2>
-        <br>
 
-        <p class="govuk-body">
-          <a href="" class="govuk-link">Add a new share class</a>
-        </p>
         {% include "includes/long-statement-of-capital-edit.html" %}
+        {% include "includes/$-edit.html" %}
 
         {{ govukButton({
 text: "Submit"

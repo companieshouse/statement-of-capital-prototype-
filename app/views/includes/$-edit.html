@@ -1,0 +1,176 @@
+<h2 class="govuk-heading-m">US $</h2>
+<br>
+
+<p class="govuk-body">
+  <a href="" class="govuk-link">Add a new share class</a>
+</p>
+<div class="govuk-summary-card govuk-!-margin-bottom-4">
+  <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+    <p class="govuk-!-font-weight-bold govuk-!-margin-0">A2 Preferred</p>
+
+    <p class="govuk-body">
+      <a href="" class="govuk-link">Remove class</a>
+    </p>
+
+  </div>
+  <div style="padding: 15px;">
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+        {
+          key: {
+            text: "Class of shares"
+          },
+          value: {
+            text: "A2 Preferred"
+          },
+          actions: {
+            items: [
+              {
+                href: "/dynamic-pages/share-type",
+                text: "Change",
+                visuallyHiddenText: "class"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Currency"
+          },
+          value: {
+            text: "$"
+          },
+          actions: {
+            items: [
+              {
+                href: "/dynamic-pages/currency",
+                text: "Change",
+                visuallyHiddenText: "currency"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Number of shares"
+          },
+          value: {
+            text: "217,380"
+          },
+          actions: {
+            items: [
+              {
+                href: "/dynamic-pages/how-many-shares",
+                text: "Change",
+                visuallyHiddenText: "alloted"
+              }
+            ]
+          }
+        }, {
+           key: {
+             text: "Value of each share"
+           },
+           value: {
+             text: "$0.000001"
+           },
+           actions: {
+             items: [
+               {
+                 href: "#",
+                 text: "Change",
+                 visuallyHiddenText: "alloted"
+               }
+             ]
+           }
+         },{
+            key: {
+              text: "Total value"
+            },
+            value: {
+              text: "$0.21738"
+            }
+          },
+          {
+             key: {
+               text: "Total amount unpaid"
+             },
+             value: {
+               text: "$0"
+             },
+             actions: {
+               items: [
+                 {
+                   href: "#",
+                   text: "Change",
+                   visuallyHiddenText: "alloted"
+                 }
+               ]
+             }
+           },
+           {
+              key: {
+                text: "Rights attached to the shares"
+              },
+              value: {
+                html: "<p>Voting: one vote per share</p>
+            <p>Dividends: each share is entitled to participate pari passu in dividend payment</p>
+            <p>Capital return: each share is entitled to participate in a distribution (including on winding up)</p>
+            <p>Redemption: no redemption rights</p>"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "alloted"
+                  }
+                ]
+              }
+            }
+      ]
+    }) }}
+  </div>
+
+</div>
+
+<h2 class="govuk-heading-m">Totals</h2>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+  {
+    key: {
+      text: "Currency"
+    },
+    value: {
+      text: "$"
+    }
+  },
+  {
+    key: {
+      text: "Total number of shares"
+    },
+    value: {
+      text: "217,380"
+    }
+  },
+
+  {
+    key: {
+      text: "Total value"
+    },
+    value: {
+      text: '$0.21738'
+    }
+  },
+    {
+      key: {
+        text: "Total amount unpaid, if any"
+      },
+      value: {
+        text: '0'
+      }
+      }
+  ]
+}) }}
