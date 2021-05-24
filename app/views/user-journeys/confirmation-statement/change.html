@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What update do you need to make
+{% endblock %}
+
+<!--service names are not currently shown on CH sign in or company authenticate-->
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase-banner.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action="/change-answer" method="post">
+
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What change has been made to the share capital?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="form-sh01" name="form" type="radio" value="SH01" data-aria-controls="conditional-form">
+                  <label class="govuk-label govuk-radios__label" for="form-sh01">
+                    New shares have been issued
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="form-cs" name="form" type="radio" value="CS" data-aria-controls="conditional-form">
+                  <label class="govuk-label govuk-radios__label" for="form-cs">
+                    Correct an error
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="form-other" name="form" type="radio" value="other" data-aria-controls="conditional-form-2">
+                  <label class="govuk-label govuk-radios__label" for="form-other">
+                    There’s been another change to share capital
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Selecting this option will redirect you out of this service to forms to notify Companies House of a change to share capital information.
+                  </div>
+                </div>
+                <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                  Continue
+                </button>
+              </fieldset>
+            </form>
+
+          </div>
+          <!--govuk-grid-row-->
+        </div>
+        <!--govuk-grid-column-two-thirds-->
+
+      </main>
+    </div>
+    <!---govuk-width-container-->
+
+  {% endblock %}

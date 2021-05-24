@@ -18,6 +18,12 @@ router.get('/change-answer', function (req, res) {
   }
   if (change === 'SH08') {
     res.redirect('/user-journeys/SH08/date')
+  }
+  if (change === 'other') {
+    res.redirect('https://www.gov.uk/government/collections/forms-to-update-shares')
+  }
+  if (change === 'CS') {
+    res.redirect('/user-journeys/confirmation-statement/edit-the-statement-of-capital')
   } else {
     res.redirect('/dynamic-pages/date')
   }
