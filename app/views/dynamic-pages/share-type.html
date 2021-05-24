@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="choose-a-value" method="get">
+      <form class="form" action="how-many-shares" method="get">
 
         {% set otherHtml %}
         <div class="govuk-input--width-30">
@@ -26,51 +26,70 @@
         <script src="/public/javascripts/class.js"></script>
         {% endset -%}
 
-        {{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "shareholders",
-  name: "shareholders",
-  fieldset: {
-    legend: {
-      text: "What is the class of the shares?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "ordinary",
-      text: "Orindary"
-    },
-    {
-      value: "a-ordinary",
-      text: "A Ordinary"
-    },
-    {
-      value: "b-ordinary",
-      text: "B Ordinary"
-    },
-        {
-      value: "ordinary",
-      text: "Ordinary"
-    },
-        {
-      value: "ordinary-b",
-      text: "Ordinary B"
-    },
-    {
-      value: "other",
-      text: "Other",
-      conditional: {
-        html: otherHtml
-      }
-    }
-  ]
-}) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+      <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in">
+          Ordinary
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          Commonly used when shareholders are given the right to vote and receive dividends.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          A Ordinary
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Commonly used when there's a difference in share value or rights to Ordinary rights.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          B Ordinary
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Commonly used when there's a difference in share value or rights to Ordinary rights.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          C Ordinary
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Commonly used when there's a difference in share value or rights to Ordinary rights.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          Ordinary B
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Commonly used when there's a difference in share value or rights to Ordinary rights.
+        </div>
+      </div>
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Other
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-input--width-30">
+          <label for="autocomplete-default" class="govuk-label">Enter a share type</label>
+          <div id="class" class="autocomplete-wrapper"></div>
+        </div>
+        <script src="/public/javascripts/accessible-autocomplete.js"></script>
+        <script src="/public/javascripts/class.js"></script>
+      </div>
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+        Continue
+      </button>
 
       </form>
 

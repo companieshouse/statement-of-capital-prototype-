@@ -21,26 +21,14 @@
             What amount has been unpaid (including share premium) for each share?
           </label>
         </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+          This is the amount that has been unpaid and may include share premium, this may be 0.
+        </div>
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
           <input class="govuk-input govuk-input--width-5" id="amount-paid" name="amount-paid" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
         </div>
-        <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Select a different currency
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <div class="govuk-input--width-30">
-            <label for="autocomplete-default" class="govuk-label">Enter a currency</label>
-            <div id="currency" class="autocomplete-wrapper"></div>
-          </div>
-          <script src="/public/javascripts/accessible-autocomplete.js"></script>
-          <script src="/public/javascripts/currency.js"></script>
-          </div>
-        </details>
         <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
           Continue
         </button>
@@ -75,21 +63,6 @@
           <input class="govuk-input govuk-input--width-5" id="amount-paid" name="amount-paid" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
         </div>
-        <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Select a different currency
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <div class="govuk-input--width-30">
-            <label for="autocomplete-default" class="govuk-label">Enter a currency</label>
-            <div id="currency" class="autocomplete-wrapper"></div>
-          </div>
-          <script src="/public/javascripts/accessible-autocomplete.js"></script>
-          <script src="/public/javascripts/currency.js"></script>
-          </div>
-        </details>
         <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
           Continue
         </button>
