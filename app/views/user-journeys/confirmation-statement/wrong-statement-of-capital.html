@@ -2,7 +2,8 @@
 
 {% block pageTitle %}
   You cannot use this service - File a confirmation statement
-{% endblock %}{% set serviceName %}
+{% endblock %}
+{% set serviceName %}
 Confirmation Statement
 {% endset%}
 {% block backLink %}
@@ -19,17 +20,20 @@ Confirmation Statement
           You need to update the company details
         </h1>
         <p>You will need to
-          <a target="_blank" href="/user-journeys/confirmation-statement/edit-the-statement-of-capital">update the company's share capital information (opens in a new tab)</a> before you can file a confirmation statement.
+          <a target="_blank" href="/user-journeys/confirmation-statement/change">update the company's share capital information (opens in a new tab)</a>
+          before you can file a confirmation statement.
         </p>
 
         <div class="govuk-inset-text">Updates can take some time to process, and will not be reflected immediately in the information displayed on this service. As long as the update has been submitted, you can still file the confirmation statement.
         </div>
 
-<p>You can return to this confirmation statement by selecting <a href="/your-filings">Your Filings</a> in your Companies House account.</p>
+        <p>You can return to this confirmation statement by selecting
+          <a href="/your-filings">Your Filings</a>
+          in your Companies House account.</p>
 
-<button class="govuk-button" data-module="govuk-button">
-  Return to confirmation statement
-</button>
+        <a href="task-list" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Return to confirmation statement
+        </a>
 
         <p>
           <a href="https://www.smartsurvey.co.uk/s/fileconfstmnt-wrongsharecap/">What did you think of this service?</a>
