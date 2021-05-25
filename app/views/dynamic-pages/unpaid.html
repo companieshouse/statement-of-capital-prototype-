@@ -14,7 +14,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+     {% if data['cash'] === 'cash-and-non-cash' %}
+      <form class="form" action="non-cash-considerations" method="get">
+      {% else %}
       <form class="form" action="prescribed-particulars" method="get">
+      {% endif %}
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
             What amount has been unpaid (including share premium) for each share?
