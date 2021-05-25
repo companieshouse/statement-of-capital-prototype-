@@ -14,9 +14,20 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <form class="form" action="how-many-shares" method="get">
-
+       {% set LegendHtml %}
+          What type of shares were issued?
+        {% endset -%}  
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What type of shares were issued?
+      </h1>
+    </legend>
+    <div id="shares-alloted-hint" class="govuk-hint">
+      Choose from this list of standard share types or add another.
+    </div> 
         {% set otherHtml %}
         <div class="govuk-input--width-30">
           <label for="autocomplete-default" class="govuk-label">Enter a share type</label>
