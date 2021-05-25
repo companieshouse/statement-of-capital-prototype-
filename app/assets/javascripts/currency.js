@@ -45,7 +45,7 @@ var currencies = [
 	'EURO, EUR (€)',
 	'Fijian dollar, FJD (FJ$)',
 	'Falkland Islands pound, FKP (£)',
-	'British pound, GBP (£)',
+	'Pound sterling, GBP (£)',
 	'Georgian lari, GEL (GEL)',
 	'Guernsey pound, GGP (£)',
 	'Ghanaian cedi, GHS (GH₵)',
