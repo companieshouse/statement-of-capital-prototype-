@@ -29,8 +29,22 @@ $govuk-assets-path: '/govuk/assets/';
   background: #f3f2f1;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.align-center {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center
+}
+
+.display-none {
+  display: none;
 }
 
 .prescribed-particulars-text {
@@ -72,6 +86,11 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.rtl {
+  direction:rtl; 
+  text-align: left
+}
+
 //Styles for user bar
 .user-bar {
   display: flex; 
@@ -92,3 +111,6 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.pr-0 {
+  padding-right: 0px;
+}
