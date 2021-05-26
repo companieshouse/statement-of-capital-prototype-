@@ -15,9 +15,7 @@
 
       <form action="/default-pages/new-statement-of-capital" method="post">
 
-        <h1 class="govuk-heading-l">Check your answers for the allotment of shares</h1>
-
-        <h2 class="govuk-heading-m">Company details</h2>
+        <h1 class="govuk-heading-l">Check your answers</h1>
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -48,8 +46,8 @@
           </div>
         </dl>
 
-        <h2 class="govuk-heading-m">Return of allotment of shares</h2>
-        
+        <h2 class="govuk-heading-m">Details of new shares issued</h2>
+
         <dl class="govuk-summary-list">
          {% if data['sh01-end-date'] === "end-date" %}
         <div class="govuk-summary-list__row">
@@ -82,7 +80,7 @@
         {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Type of shares
+            Share type
           </dt>
           <dd class="govuk-summary-list__value">
             Ordinary
@@ -108,10 +106,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Share currency
+            Currency
           </dt>
           <dd class="govuk-summary-list__value">
-            Pound sterling, GBP (£)
+            Pound sterling, £ (GBP)
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -135,10 +133,10 @@
         {% if data['cash'] === 'cash' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Amount paid per share (including share premium)
+            Amount paid for each share
           </dt>
           <dd class="govuk-summary-list__value">
-            £50
+            £1
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -148,7 +146,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Amount unpaid per share (including share premium)
+            Amount unpaid for each share
           </dt>
           <dd class="govuk-summary-list__value">
             £0
@@ -165,7 +163,7 @@
             Non cash considerations
           </dt>
           <dd class="govuk-summary-list__value">
-            Details about non cash considerations for each share
+            Non-cash consideration for each share
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
