@@ -17,7 +17,7 @@
       <form class="form" action="how-many-shares" method="get">
        {% set LegendHtml %}
           What type of shares were issued?
-        {% endset -%}  
+        {% endset -%}
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -25,9 +25,7 @@
         What type of shares were issued?
       </h1>
     </legend>
-    <div id="shares-alloted-hint" class="govuk-hint">
-      Choose from this list of standard share types or add another.
-    </div> 
+
         {% set otherHtml %}
         <div class="govuk-input--width-30">
           <label for="autocomplete-default" class="govuk-label">Enter a share type</label>
@@ -44,7 +42,7 @@
           Ordinary
         </label>
         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          Commonly used when shareholders are given the right to vote and receive dividends.
+          This is the most commonly issued share type. It is used when shareholders are given the right to vote and receive dividends.
         </div>
       </div>
       <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -56,7 +54,7 @@
       </div>
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
         <div class="govuk-input--width-30">
-          <label for="autocomplete-default" class="govuk-label">Enter a share type</label>
+          <label for="autocomplete-default" class="govuk-label">Choose a share type, or enter a new one</label>
           <div id="class" class="autocomplete-wrapper"></div>
         </div>
         <script src="/public/javascripts/accessible-autocomplete.js"></script>
