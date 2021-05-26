@@ -5,7 +5,7 @@
 
 <!--service names are not currently shown on CH sign in or company authenticate-->
 {% block main %}
-  
+
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
     {% include "includes/user-bar.html" %}
@@ -16,11 +16,13 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="" method="post">
         <h1 class="govuk-heading-l">
-          You are about to exit this service
+          You cannot use this service
         </h1>
-        <p>Follow the <a target="_blank" href="https://www.gov.uk/government/collections/forms-to-update-shares">link to forms you can use to notify Companies House of a change to share capital information
-          </a>.
+        
+        <p>For now, you can only use this service to update information about new shares that have been issued.
+        <p>You'll need to use the <a target="_blank" href="https://www.gov.uk/government/collections/forms-to-update-shares">share capital forms</a> to make any other updates to share capital information. Many of these can be filed online using the <a href="https://find-and-update.company-information.service.gov.uk/efs-submission/start" class="govuk-link">Upload a document to Companies House</a> service.
         </p>
+
       </form>
     </div>
   </div>
