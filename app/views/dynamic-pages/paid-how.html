@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How many shares are being alloted?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  
+
+      {% if data['shares-paid-how'] === 'cash' %}
+        <form class="form" action="prescribed-particulars" method="get">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="cost-per-item">
+            How much has been paid for each share?
+          </label>
+        </h1>
+         {% elif data['shares-paid-how'] === 'non-cash' %}
+        <form class="form" action="prescribed-particulars" method="get">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="cost-per-item">
+            What has been paid for each share?
+          </label>
+        </h1>
+                 {% elif data['shares-paid-how'] === 'cash-and-non-cash'%}
+        <form class="form" action="non-cash-payment-details" method="get">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="cost-per-item">
+            What has been paid for each share?
+          </label>
+        </h1>
+         {% endif %}
+      {% if data['shares-paid-how'] === 'cash' %}
+       <div id="account-number-hint" class="govuk-hint">
+          Enter amount in cash.
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
+      </div>
+      </div>
+      {% elif data['shares-paid-how'] === 'non-cash'%}
+ <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="4000" data-threshold="90">
+          <div class="govuk-form-group">
+          <div id="account-number-hint" class="govuk-hint">
+            Enter details of non-cash.
+          </div>
+            <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="word-count" rows="10" aria-describedby="word-count-info"></textarea>
+          </div>
+          <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 4000 characters
+          </div>
+        </div>
+        </div>
+      {% elif data['shares-paid-how'] === 'cash-and-non-cash'%}
+ <div id="account-number-hint" class="govuk-hint">
+          Enter amount in cash.
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
+        </div>
+      </div>
+      {% else %}
+        <p>Please select whether the shares were paid for in cash or non-cash</p>
+      {% endif %}
+             
+    </div>
+           <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

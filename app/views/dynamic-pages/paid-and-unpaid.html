@@ -19,32 +19,26 @@
         <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        How were the shares paid for?
+        Have the shares been paid for in full?
       </h1>
     </legend>
     <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="cash" name="cash" type="radio" value="cash" data-aria-controls="conditional-cash">
-        <label class="govuk-label govuk-radios__label" for="cash">
-          Cash
+        <input class="govuk-radios__input" id="yes" name="shares-paid" type="radio" value="yes" data-aria-controls="conditional-cash">
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes
         </label>
-        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          This includes any monetary method of payment.
-        </div>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="non-cash" name="cash" type="radio" value="non-cash" data-aria-controls="conditional-cash-2">
-        <label class="govuk-label govuk-radios__label" for="non-cash">
-          Non-cash consideration
+        <input class="govuk-radios__input" id="no-partly" name="shares-paid" type="radio" value="no-partly" data-aria-controls="conditional-cash-2">
+        <label class="govuk-label govuk-radios__label" for="no-partly">
+          No, they are partly paid
         </label>
-        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          This is where shares have been paid for with something other than cash, such as property or equipment.
-        </div>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="cash-and-non-cash" name="cash" type="radio" value="cash-and-non-cash" data-aria-controls="conditional-cash-3">
-        <label class="govuk-label govuk-radios__label" for="cash-and-non-cash">
-         A combination of cash and non-cash consideration
+        <input class="govuk-radios__input" id="no-unpaid" name="shares-paid" type="radio" value="no-unpaid" data-aria-controls="conditional-cash-3">
+        <label class="govuk-label govuk-radios__label" for="no-unpaid">
+         No, they are unpaid
         </label>
       </div>
     </div>

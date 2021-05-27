@@ -15,48 +15,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['cash'] === 'cash' %}
-      <form class="form" action="unpaid" method="get">
+      {% if data['shares-paid'] === 'yes' %}
+      <form class="form" action="paid-how" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
-            How much has been paid for each share?
+            How were shares paid for?
           </label>
         </h1>
-        <div id="passport-issued-hint" class="govuk-hint">
-          Include the share premium if there is one.
-        </div>
-        <div class="govuk-input__wrapper">
-          <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" id="amount-paid" name="amount-paid" type="text" spellcheck="false">
-          <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
-        </div>
+        <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="cash" name="shares-paid-how" type="radio" value="cash" data-aria-controls="conditional-cash">
+        <label class="govuk-label govuk-radios__label" for="cash">
+          Cash
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="non-cash" name="shares-paid-how" type="radio" value="non-cash" data-aria-controls="conditional-cash-2">
+        <label class="govuk-label govuk-radios__label" for="non-cash">
+          Non-cash
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="cash-and-non-cash" name="shares-paid-how" type="radio" value="cash-and-non-cash" data-aria-controls="conditional-cash-3">
+        <label class="govuk-label govuk-radios__label" for="cash-and-non-cash">
+         A combination of cash & non-cash
+        </label>
+      </div>
+    </div>
         <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
           Continue
         </button>
       </div>
 
-      {% elif data['cash'] === 'non-cash'%}
-      <form class="form" action="unpaid" method="get">
-      <h1 class="govuk-heading-l">
-          What is the non-cash consideration for each share?
-        </h1>
-
-        {{ govukTextarea({
-            hint: {
-            text: "This is where shares have been paid for with something other than cash. For example, property, shares in another company, or equipment."
-        },
-          id: "non-cash-consideration",
-          name: "non-cash-consideration"
-        }) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      {% elif data['cash'] === 'cash-and-non-cash'%}
-            <form class="form" action="unpaid" method="get">
+      {% elif data['shares-paid'] === 'no-partly' or 'no-unpaid'%}
+        <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
-            How much has been paid in cash for each share?
+            What amount has been unpaid (including share premium) for each share?
           </label>
           <div id="passport-issued-hint" class="govuk-hint">
             Include the share premium if there is one.
