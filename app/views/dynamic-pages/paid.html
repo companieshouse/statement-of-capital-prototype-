@@ -27,18 +27,24 @@
         <input class="govuk-radios__input" id="cash" name="shares-paid-how" type="radio" value="cash" data-aria-controls="conditional-cash">
         <label class="govuk-label govuk-radios__label" for="cash">
           Cash
+          <div id="account-number-hint" class="govuk-hint">
+            This includes any monetary method of payment.
+          </div>
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="non-cash" name="shares-paid-how" type="radio" value="non-cash" data-aria-controls="conditional-cash-2">
         <label class="govuk-label govuk-radios__label" for="non-cash">
-          Non-cash
+          Non-cash consideration
+          <div id="account-number-hint" class="govuk-hint">
+            This is where shares were paid for with something other than cash, such as property or equipment.
+          </div>
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="cash-and-non-cash" name="shares-paid-how" type="radio" value="cash-and-non-cash" data-aria-controls="conditional-cash-3">
         <label class="govuk-label govuk-radios__label" for="cash-and-non-cash">
-         A combination of cash & non-cash
+         A combination of cash and non-cash consideration
         </label>
       </div>
     </div>
@@ -51,7 +57,7 @@
         <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
-            What amount has been unpaid (including share premium) for each share?
+            What is the amount unpaid for each share?
           </label>
           <div id="passport-issued-hint" class="govuk-hint">
             Include the share premium if there is one.
