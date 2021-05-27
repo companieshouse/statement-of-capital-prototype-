@@ -29,31 +29,28 @@
           Cash
         </label>
         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          This is a monetary value, for example GBP.
+          This includes any monetary method of payment.
         </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="non-cash" name="cash" type="radio" value="non-cash" data-aria-controls="conditional-cash-2">
         <label class="govuk-label govuk-radios__label" for="non-cash">
-          Non-cash
+          Non-cash consideration
         </label>
         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          This is a non monetary value.
+          This is where shares have been paid for with something other than cash, such as property or equipment.
         </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="cash-and-non-cash" name="cash" type="radio" value="cash-and-non-cash" data-aria-controls="conditional-cash-3">
         <label class="govuk-label govuk-radios__label" for="cash-and-non-cash">
-         Cash and non-cash
+         A combination of cash and non-cash consideration
         </label>
-        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          This is a combination of monetary and non monetary values.
-        </div>
       </div>
     </div>
 
   </fieldset>
-        
+
 
         {{ govukButton({
           text: "Continue",

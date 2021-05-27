@@ -38,12 +38,12 @@
       {% elif data['cash'] === 'non-cash'%}
       <form class="form" action="unpaid" method="get">
       <h1 class="govuk-heading-l">
-          What are the non cash considerations for each share?
+          What is the non-cash consideration for each share?
         </h1>
 
         {{ govukTextarea({
             hint: {
-            text: "This is where shares have been paid for using something other than cash. For example, property, shares in another company, or equipment."
+            text: "This is where shares have been paid for with something other than cash. For example, property, shares in another company, or equipment."
         },
           id: "non-cash-consideration",
           name: "non-cash-consideration"
@@ -56,8 +56,12 @@
             <form class="form" action="unpaid" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
-            What amount has been paid (including share premium) for each share?
+            How much has been paid in cash for each share?
           </label>
+          <div id="passport-issued-hint" class="govuk-hint">
+            Include the share premium if there is one.
+          </div>
+
         </h1>
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
