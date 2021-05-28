@@ -20,21 +20,21 @@
       {% if data['shares-paid-how'] === 'cash' %}
         <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="cost-per-item">
+          <label class="govuk-label govuk-label--l" for="shares-paid-how">
             How much has been paid in cash for each share?
           </label>
         </h1>
          {% elif data['shares-paid-how'] === 'non-cash' %}
         <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="cost-per-item">
+          <label class="govuk-label govuk-label--l" for="shares-paid-how">
             What is the non-cash consideration for each share?
           </label>
         </h1>
                  {% elif data['shares-paid-how'] === 'cash-and-non-cash'%}
         <form class="form" action="non-cash-payment-details" method="get">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="cost-per-item">
+          <label class="govuk-label govuk-label--l" for="shares-paid-how">
             How much has been paid in cash for each share?
           </label>
         </h1>
@@ -45,7 +45,7 @@
         </div>
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+          <input class="govuk-input govuk-input--width-5" id="how-much-has-been-paid-cash" name="how-much-has-been-paid-cash" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
       </div>
       </div>
@@ -68,7 +68,7 @@
         </div>
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+          <input class="govuk-input govuk-input--width-5" id="how-much-has-been-paid-cash-and-non-cash" name="how-much-has-been-paid-cash-and-non-cash" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
         </div>
       </div>
