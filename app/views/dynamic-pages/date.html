@@ -21,16 +21,26 @@
           When were the shares issued?
         {% endset -%}
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        When were the shares issued?
+        How would you prefer to be contacted?
       </h1>
     </legend>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          All on one day
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+           <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+    <h3 class="govuk-heading-s">What date were the shares issued?</h3>
     <div id="shares-alloted-hint" class="govuk-hint">
-      For example, 13 3 2021
+      For example, 13 03 2021
     </div>
-    <h3 class="govuk-heading-s">Date of issue</h3>
     <div class="govuk-date-input" id="shares-alloted-date">
       <div class="govuk-date-input__item govuk-!-padding-right-4">
         <div class="govuk-form-group">
@@ -62,15 +72,56 @@
       </div>
     </div>
   </fieldset>
-  <details class="govuk-details govuk-!-margin-top-5" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Were shares issued with an end date?
-    </span>
-  </summary>
-  <div class="govuk-!-margin-top-5 govuk-details__text">
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Over a period of more than one days
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+    <h3 class="govuk-heading-s">What period were the shares issued over?</h3>
+    <div id="shares-alloted-hint" class="govuk-hint">
+      For example, 13 03 2021
+    </div>
+    <h3 class="govuk-heading-s">Period start date</h3>
+    <div class="govuk-date-input" id="shares-alloted-date">
+      <div class="govuk-date-input__item govuk-!-padding-right-4">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label">
+            Day
+          </label>
+          <input class="display-none" aria-hidden="true"></div>
+      </div>
+      <div class="govuk-date-input__item ">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label">
+            Month
+          </label>
+          <input class="display-none" aria-hidden="true"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label">
+            Year
+          </label>
+          <input class="display-none" aria-hidden="true"></div>
+      </div>
+     <div>
+        <div>
+          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-2 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="2" class="inputs" />
+          <input class="govuk-input govuk-date-input__input date-input-autofocus-fields govuk-input--width-4 inputs" id="shares-alloted-end-year" name="shares-alloted-end-year" type="Number" pattern="[0-9]*" inputmode="numeric" maxlength="4" class="inputs" />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="govuk-!-margin-top-5">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-end-hint">
-    <h3 class="govuk-heading-s">End date (optional)</h3>
+    <h3 class="govuk-heading-s">Period end date</h3>
     <div class="govuk-date-input" id="shares-alloted-date">
       <div class="govuk-date-input__item govuk-!-padding-right-4">
         <div class="govuk-form-group">
@@ -102,15 +153,20 @@
       </div>
     </div>
     </fieldset>
+
+      </div>
+    </div>
+
+  </fieldset>
   </div>
 </details>
-
-</div>
-
-
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
+</div>
+
+
+
 
       </form>
 
