@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,14 +14,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['form'] === 'SH01' %}
-        <span class="govuk-caption-l">
-          Return of allotment of shares</span>
-      {% endif %}
-      {% if data['form'] === 'SH06' %}
-        <span class="govuk-caption-l">
-          Notify a cancellation of shares</span>
-      {% endif %}
 
       <form class="form" action="choose-a-value" method="get">
 
@@ -48,15 +40,15 @@
   items: [
     {
       value: "gbp",
-      text: "£ (GBP)"
+      text: "Pound sterling, £ (GBP)"
     },
     {
       value: "usd",
-      text: "$ (USD)"
+      text: "US dollar, $ (USD)"
     },
     {
       value: "eur",
-      text: "€ (EUR)"
+      text: "Euro, € (EUR)"
     },
     {
       value: "other",

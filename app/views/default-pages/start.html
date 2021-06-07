@@ -17,22 +17,39 @@
             {{ serviceName }}
           {% endif %}
         </h1>
-        <p class="govuk-body-l">Use this service to submit changes to a company’s share capital information, and to update the statement of capital.
-        </p>
 
-        <p class="govuk-body govuk-!-font-weight-bold">You can only use this service for:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>new shares that have been issued</li>
-          <li>shares that have been cancelled</li>
-          <li>shares that have changed class</li>
-          <li>a change in the rights attached to shares</li>
-        </ul>
+        <div class="govuk-body">
+          You can currently only use this service to file information about new shares that have been issued, also known as an allotment of shares.
+        </div>
 
-        <p class="govuk-body govuk-!-font-weight-bold">To update share capital information, you'll need:</p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How to file other share capital updates
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You'll need to use the
+              <a href="https://www.gov.uk/government/collections/forms-to-update-shares" class="govuk-link">share capital forms</a>
+              for all other updates. Most can be filed online using the
+              <a href="https://find-and-update.company-information.service.gov.uk/efs-submission/start" class="govuk-link">Upload a document to Companies House</a>
+              service.
+            </p>
+
+            <p class="govuk-body">You can only update shareholder details by filing a confirmation statement. You can do this online using our
+              <a href="https://ewf.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">WebFiling service</a>.
+            </p>
+
+          </div>
+        </details>
+
+        <p class="govuk-body">You'll need:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>to sign in to or create a Companies House account, which is different from a WebFiling account</li>
           <li>the company number</li>
-          <li>the company authentication code</li>
+          <li>the
+            <a href="https://www.gov.uk/guidance/company-authentication-codes-for-online-filing#how-to-get-the-company-authentication-code" target="_blank">company authentication code</a>
+          </li>
         </ul>
 
         {{ govukButton({

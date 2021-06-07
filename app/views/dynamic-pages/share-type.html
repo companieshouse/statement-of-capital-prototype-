@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to use the most common type of shares?
+  Choose a share type
 {% endblock %}
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,105 +14,59 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% if data['form'] === 'SH01' %}
-        <span class="govuk-caption-l">
-          Return of allotment of shares</span>
-      {% endif %}
-
-      {% if data['form'] === 'SH06' %}
-        <span class="govuk-caption-l">
-          Notify a cancellation of shares</span>
-      {% endif %}
-
-      {% set LegendHtml %}
-
-      {% if data['form'] === 'SH01' %}
-        What type of shares were issued?
-      {% endif %}
-
-      {% if data['form'] === 'SH06'%}
-        What type of shares would you like to cancel?
-      {% endif %}
-
-      {% if data['form'] == null %}
-        What type of shares?
-      {% endif %}
-
-      {% endset -%}
       <form class="form" action="how-many-shares" method="get">
-
-        {% set otherHtml %}
-        {{ govukInput({
-          id: "other-share-type",
-          name: "other-share-type",
-          type: "tel",
-          classes: "govuk-!-width-one-half",
-          label: {
-            text: "Enter a type of share"
-          }
-        }) }}
+        {% set LegendHtml %}
+        What type of shares were issued?
         {% endset -%}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="shares-alloted-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What type of shares were issued?
+              </h1>
+            </legend>
 
-        {{ govukRadios({
-     idPrefix: "share-type",
-     name: "share-type",
-     fieldset: {
-       legend: {
-         text: LegendHtml,
-         isPageHeading: true,
-         classes: "govuk-fieldset__legend--l"
-       }
-     },
-     hint: {
-  text: "Choose from this list of standard share types or add another."
-},
-        items: [
-          {
-            value: "ordinary",
-            text: "Ordinary",
-            hint: {
-              text: "Commonly used when shareholders are given the right to vote and receive dividends."
-            }
-          },
-          {
-            value: "ordinary-a",
-            text: "Ordinary A",
-            hint: {
-              text: "Commonly used when there's a difference in share value or rights to Ordinary shares."
-            }
-          },
-          {
-            value: "redeemable",
-            text: "Redeemable",
-            hint: {
-              text: "Commonly used when companies are able to buy back shares."
-            }
-          },
-          {
-            value: "preference",
-            text: "Preference",
-            hint: {
-              text: "Commonly used when shareholders dividend payments are prioritised over Ordinary shareholders."
-            }
-          },
-          {
-            value: "other",
-            text: "Other",
-            conditional: {
-              html: otherHtml
-            }
-          }
-        ]
-      }) }}
+            {% set otherHtml %}
+            <div class="govuk-input--width-30">
+              <label for="autocomplete-default" class="govuk-label">Enter a share type</label>
+              <div id="class" class="autocomplete-wrapper"></div>
+            </div>
+            <script src="/public/javascripts/accessible-autocomplete.js"></script>
+            <script src="/public/javascripts/class.js"></script>
+            {% endset -%}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="share-type" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Ordinary
+                </label>
+                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                  This is the most commonly issued share type. It is used when shareholders are given the right to vote and receive dividends.
+                </div>
+              </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="share-type" type="radio" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-input--width-30">
+                    <label for="autocomplete-default" class="govuk-label">Enter a share type, or create a new one</label>
+                    <div id="class" class="autocomplete-wrapper"></div>
+                  </div>
+                  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+                  <script src="/public/javascripts/class.js"></script>
+                </div>
+                <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+                  Continue
+                </button>
 
-      </form>
+              </form>
 
-    </div>
-  </div>
+            </div>
+          </div>
 
-{% endblock %}
+        {% endblock %}

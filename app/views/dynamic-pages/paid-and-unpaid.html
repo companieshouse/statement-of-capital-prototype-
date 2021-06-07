@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,50 +14,41 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">
-        Return of allotment of shares</span>
 
-      <form class="form" action="prescribed-particulars" method="get">
-        <h1 class="govuk-heading-l">
-          What are the amounts paid and unpaid for each share?
-        </h1>
-        {{ govukInput({
-          label: {
-            text: "What is the amount paid on each share?",
-            classes: "govuk-label",
-            isPageHeading: false
-          },
-          id: "amount-paid",
-          classes: "govuk-input--width-10",
-          name: "amount-paid"
-        }) }}
+      <form class="form" action="payment-details" method="get">
+        <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Have the shares been paid for in full?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yes" name="shares-paid" type="radio" value="yes" data-aria-controls="conditional-paid-1">
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no-partly" name="shares-paid" type="radio" value="no-partly" data-aria-controls="conditional-paid-2">
+        <label class="govuk-label govuk-radios__label" for="no-partly">
+          No, they are partly paid
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no-unpaid" name="shares-paid" type="radio" value="no-unpaid" data-aria-controls="conditional-paid-3">
+        <label class="govuk-label govuk-radios__label" for="no-unpaid">
+         No, they are unpaid
+        </label>
+      </div>
+    </div>
 
-        {{ govukInput({
-          label: {
-              text: "What is the amount unpaid on each share?",
-            classes: "govuk-label",
-            isPageHeading: false
-          },
-          id: "amount-unpaid",
-          classes: "govuk-input--width-10",
-          name: "amount-unpaid"
-        }) }}
+  </fieldset>
 
-        {{ govukTextarea({
-          label: {
-              text: "Details of non-cash consideration (optional)",
-            classes: "govuk-label",
-            isPageHeading: false
-          },
- hint: {
-   text: "This is where shares have been paid for using something other than cash. For example, property, shares in another company, or equipment."
- },
-          id: "non-cash-consideration",
-          name: "non-cash-consideration"
-        }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          classes: "govuk-!-margin-top-4"
         }) }}
 
       </form>

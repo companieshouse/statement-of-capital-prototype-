@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,19 +14,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['form'] === 'SH01' %}
-        <span class="govuk-caption-l">
-          Return of allotment of shares</span>
-      {% endif %}
-      {% if data['form'] === 'SH06' %}
-        <span class="govuk-caption-l">
-          Notify a cancellation of shares</span>
-      {% endif %}
 
       <form class="form" action="paid-and-unpaid" method="get">
 
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="cost-per-item">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="share-value">
             What is the value of each share?
           </label>
         </h1>
@@ -35,7 +27,7 @@
         </div>
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+          <input class="govuk-input govuk-input--width-5" id="share-value" name="share-value" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
         </div>
       </div>
