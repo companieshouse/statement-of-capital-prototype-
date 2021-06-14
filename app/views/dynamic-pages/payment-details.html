@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['shares-paid'] === 'yes' %}
+      {% if data['shares-paid'] === 'yes' or 'no-partly'%}
       <form class="form" action="paid-how" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
@@ -48,7 +48,7 @@
           Continue
         </button>
       </div>
-      {% elif data['shares-paid'] === 'no-partly' %}
+      {% elif data['shares-paid'] === 'no-partly-unpaid' %}
        <form class="form" action="payment-method" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cost-per-item">
