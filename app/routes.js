@@ -97,39 +97,19 @@ router.get('/another-update-answer', function (req, res) {
   }
 })
 
-router.get('/dynamic-pages/payment-details/payment-details', function (req, res) {
-  res.render('dynamic-pages/payment-details/payment-details'),{
-  }
-})
+router.get('/paid-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
 
-router.post('/dynamic-pages/payment-details/payment-details', function (req, res) {
-  const paymentDetails = req.body['payment-details']
-  if (paymentDetails === 'paid-fully') {
-    res.redirect('paid-fully')
-  }
-  if (paymentDetails === 'paid-partly') {
-    res.redirect('paid-partly')
-  }
-  if (paymentDetails === 'unpaid') {
-    res.redirect('unpaid')
-  }
-})
-
-router.get('/dynamic-pages/payment-details/payment-details/paid-fully/', function (req, res) {
-  res.render('dynamic-pages/payment-details/payment-details/paid-fully/'),{
-  }
-})
-
-router.post('/dynamic-pages/payment-details/payment-details/paid-fully/', function (req, res) {
-  const paymentMethod = req.body['payment-method']
-  if (paymentMethod === 'cash') {
-    res.redirect('cash')
-  }
-  if (paymentMethod === 'non-cash') {
-    res.redirect('non-cash')
-  }
-  if (paymentMethod === 'cash-and-non-cash') {
-    res.redirect('cash-and-non-cash')
+  const paid = req.session.data['shares-paid']
+  if (paid === 'yes') {
+    res.redirect('dynamic-pages/payment-method')
+  } else
+  if (paid === 'partly-paid') {
+    res.redirect('dynamic-pages/payment-method')
+  } else {
+    res.redirect('dynamic-pages/payment-details-unpaid')
   }
 })
 

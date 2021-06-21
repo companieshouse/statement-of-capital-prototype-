@@ -15,39 +15,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="payment-method" method="get">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Have the shares been paid for in full?
-            </h1>
-          </legend>
-          <div class="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="yes" name="shares-paid" type="radio" value="yes" data-aria-controls="conditional-paid-1">
-              <label class="govuk-label govuk-radios__label" for="yes">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="no-partly" name="shares-paid" type="radio" value="no-partly" data-aria-controls="conditional-paid-2">
-              <label class="govuk-label govuk-radios__label" for="no-partly">
-                No, they are partly paid
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="no-unpaid" name="shares-paid" type="radio" value="no-unpaid" data-aria-controls="conditional-paid-3">
-              <label class="govuk-label govuk-radios__label" for="no-unpaid">
-                No, they are unpaid
-              </label>
-            </div>
-          </div>
+      <form class="form" action="/paid-answer" method="post">
 
-        </fieldset>
+        {{ govukRadios({
+          idPrefix: "shares-paid",
+          name: "shares-paid",
+          fieldset: {
+            legend: {
+              text: "Have the shares been paid for in full?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "partly-paid",
+              text: "No, they are partly paid"
+            },
+            {
+              value: "unpaid",
+              text: "No, they are unpaid"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-4"
+          text: "Continue"
         }) }}
 
       </form>
