@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Have the shares been paid for in full?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/dynamic-pages/payment-details/payment-details" method="post">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Have the shares been paid for in full?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paid-fully" name="payment-details" type="radio" value="paid-fully" data-aria-controls="conditional-paid-1">
+              <label class="govuk-label govuk-radios__label" for="paid-fully">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paid-partly" name="payment-details" type="radio" value="paid-partly" data-aria-controls="conditional-paid-2">
+              <label class="govuk-label govuk-radios__label" for="paid-partly">
+                No, they are partly paid
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="unpaid" name="payment-details" type="radio" value="unpaid" data-aria-controls="conditional-paid-3">
+              <label class="govuk-label govuk-radios__label" for="unpaid">
+                No, they are unpaid
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-4"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
