@@ -109,7 +109,7 @@ router.get('/paid-answer', function (req, res) {
   if (paid === 'partly-paid') {
     res.redirect('dynamic-pages/payment-method')
   } else {
-    res.redirect('dynamic-pages/payment-details-unpaid')
+    res.redirect('dynamic-pages/unpaid')
   }
 })
 
@@ -120,7 +120,7 @@ router.get('/method-answer', function (req, res) {
 
   const method = req.session.data['paid-method']
   if (method === 'non-cash') {
-    res.redirect('dynamic-pages/non-cash-payment-details')
+    res.redirect('dynamic-pages/non-cash')
   } else {
     res.redirect('dynamic-pages/cash')
   }
@@ -136,13 +136,13 @@ router.get('/cash-answer', function (req, res) {
   if (paid === 'yes') {
     if (method === 'cash') {
       res.redirect('dynamic-pages/prescribed-particulars')
-    } else { res.redirect('dynamic-pages/non-cash-payment-details') }
+    } else { res.redirect('dynamic-pages/non-cash') }
   }
 
   if (paid === 'partly-paid') {
-    if (method === 'cash') { res.redirect('dynamic-pages/payment-details-unpaid') } else { res.redirect('dynamic-pages/non-cash-payment-details') }
+    if (method === 'cash') { res.redirect('dynamic-pages/unpaid') } else { res.redirect('dynamic-pages/non-cash') }
   } else {
-    res.redirect('dynamic-pages/non-cash-payment-details')
+    res.redirect('dynamic-pages/non-cash')
   }
 })
 
@@ -155,7 +155,7 @@ router.get('/non-cash-answer', function (req, res) {
   if (paid === 'yes') {
     res.redirect('dynamic-pages/prescribed-particulars')
   } else {
-    res.redirect('dynamic-pages/payment-details-unpaid')
+    res.redirect('dynamic-pages/unpaid')
   }
 })
 
