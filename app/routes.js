@@ -131,11 +131,11 @@ router.get('/cash-answer', function (req, res) {
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  const paid = req.session.data['paid-method']
-  if (paid === 'non-cash') {
-    res.redirect('dynamic-pages/non-cash-payment-details')
+  const paid = req.session.data['shares-paid']
+  if (paid === 'yes') {
+    res.redirect('dynamic-pages/prescribed-particulars')
   } else {
-    res.redirect('dynamic-pages/cash')
+    res.redirect('dynamic-pages/non-cash-payment-details')
   }
 })
 
