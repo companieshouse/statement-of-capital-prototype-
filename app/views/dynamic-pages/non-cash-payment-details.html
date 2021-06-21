@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  How many shares are being alloted?
+  What is the non-cash consideration for each share?
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="prescribed-particulars" method="get">
+      <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="cash-non-cash">
             What is the non-cash consideration for each share?
@@ -22,9 +22,9 @@
         </h1>
         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="4000" data-threshold="90">
           <div class="govuk-form-group">
- <div id="account-number-hint" class="govuk-hint">
-   This is where shares have been paid for using something other than cash. For example, property, shares in another company, or equipment.
-        </div>
+            <div id="account-number-hint" class="govuk-hint">
+              This is where shares have been paid for using something other than cash. For example, property, shares in another company, or equipment.
+            </div>
             <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="word-count" rows="10" aria-describedby="word-count-info"></textarea>
           </div>
           <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
@@ -32,15 +32,15 @@
           </div>
         </div>
 
-              <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+        <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
           Continue
         </button>
-    </div>
-
       </div>
-      </form>
 
     </div>
-  </div>
+  </form>
+
+</div>
+</div>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  What update do you need to make
+  What change has been made to the share capital?
 {% endblock %}
 
 <!--service names are not currently shown on CH sign in or company authenticate-->
@@ -17,39 +17,39 @@
 
           <form action="/change-answer" method="post">
 
-             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        What change has been made to the share capital?
-      </h1>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="form-sh01" name="form" type="radio" value="SH01" data-aria-controls="conditional-form">
-        <label class="govuk-label govuk-radios__label" for="form-sh01">
-          New shares have been issued
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="form-other" name="form" type="radio" value="other" data-aria-controls="conditional-form-2">
-        <label class="govuk-label govuk-radios__label" for="form-other">
-          There has been another change to the share capital
-        </label>
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What change has been made to the share capital?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="form-sh01" name="form" type="radio" value="SH01" data-aria-controls="conditional-form">
+                  <label class="govuk-label govuk-radios__label" for="form-sh01">
+                    New shares have been issued
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="form-other" name="form" type="radio" value="other" data-aria-controls="conditional-form-2">
+                  <label class="govuk-label govuk-radios__label" for="form-other">
+                    There has been another change to the share capital
+                  </label>
+                </div>
+
+                <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                  Continue
+                </button>
+              </fieldset>
+            </form>
+
           </div>
-          
-        <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
-          Continue
-        </button>
-      </fieldset>
-          </form>
-
+          <!--govuk-grid-row-->
         </div>
-        <!--govuk-grid-row-->
-      </div>
-      <!--govuk-grid-column-two-thirds-->
+        <!--govuk-grid-column-two-thirds-->
 
-    </main>
-  </div>
-  <!---govuk-width-container-->
+      </main>
+    </div>
+    <!---govuk-width-container-->
 
-{% endblock %}
+  {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check the statement of capital
+  Check your answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +29,8 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> company number</span>
+                Change<span class="govuk-visually-hidden">
+                  company number</span>
               </a>
             </dd>
           </div>
@@ -42,7 +43,8 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> company name</span>
+                Change<span class="govuk-visually-hidden">
+                  company name</span>
               </a>
             </dd>
           </div>
@@ -51,140 +53,149 @@
         <h2 class="govuk-heading-m">Details of new shares issued</h2>
 
         <dl class="govuk-summary-list">
-         {% if data['sh01-end-date'] === "end-date" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of issue period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            05/03/2021 to 05/04/2021
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> issue date</span>
-            </a>
-          </dd>
-        </div>
-        {% else %}
-                <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of issue
-          </dt>
-          <dd class="govuk-summary-list__value">
-            05/03/2021
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> issue date</span>
-            </a>
-          </dd>
-        </div>
-        {% endif %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Share type
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Ordinary
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">share type</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Number of shares issued
-          </dt>
-          <dd class="govuk-summary-list__value">
-            50
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> share number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Currency
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Pound sterling, GBP (£)
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> share currency</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Value of each share
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £1
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> share value</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Amount paid for each share
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £1
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> amount paid</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Amount unpaid for each share
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £0
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> amount unpaid</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Non-cash consideration
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Details about non-cash considerations for each share
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> non-cash considerations</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Rights attached to this share type
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Each share has full rights in the company with respect to voting, dividends and distributions.
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> rights</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+          {% if data['sh01-end-date'] === "end-date" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of issue period
+              </dt>
+              <dd class="govuk-summary-list__value">
+                05/03/2021 to 05/04/2021
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">
+                    issue date</span>
+                </a>
+              </dd>
+            </div>
+          {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of issue
+              </dt>
+              <dd class="govuk-summary-list__value">
+                05/03/2021
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">
+                    issue date</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Share type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Ordinary
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">share type</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of shares issued
+            </dt>
+            <dd class="govuk-summary-list__value">
+              50
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  share number</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Currency
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Pound sterling, GBP (£)
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  share currency</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Value of each share
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  share value</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount paid for each share
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  amount paid</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount unpaid for each share
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £0
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  amount unpaid</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Non-cash consideration
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Details about non-cash considerations for each share
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  non-cash considerations</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Rights attached to this share type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Each share has full rights in the company with respect to voting, dividends and distributions.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">
+                  rights</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
 
