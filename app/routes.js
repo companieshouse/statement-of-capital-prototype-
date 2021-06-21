@@ -113,4 +113,30 @@ router.get('/paid-answer', function (req, res) {
   }
 })
 
+router.get('/method-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const paid = req.session.data['paid-method']
+  if (paid === 'non-cash') {
+    res.redirect('dynamic-pages/non-cash-payment-details')
+  } else {
+    res.redirect('dynamic-pages/cash')
+  }
+})
+
+router.get('/cash-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const paid = req.session.data['paid-method']
+  if (paid === 'non-cash') {
+    res.redirect('dynamic-pages/non-cash-payment-details')
+  } else {
+    res.redirect('dynamic-pages/cash')
+  }
+})
+
 module.exports = router

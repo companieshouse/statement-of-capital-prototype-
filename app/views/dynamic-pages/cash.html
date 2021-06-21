@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is the non-cash consideration for each share?
+  How much has been paid in cash for each share
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,21 +16,29 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="prescribed-particulars" method="get">
-        <h1 class="govuk-heading-l">
-          What is the non-cash consideration for each share?
-        </h1>
 
-        {{ govukTextarea({
-            hint: {
-            text: "This is where shares have been paid for using something other than cash. For example, property, shares in another company, or equipment."
-        },
-          id: "non-cash-consideration",
-          name: "non-cash-consideration"
-        }) }}
+        {{ govukInput({
+  id: "how-much-paid",
+  name: "how-much-paid",
+  label: {
+    text: "How much has been paid in cash for each share?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "£"
+  },
+  suffix: {
+    text: "(GBP)"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false
+}) }}
 
         {{ govukButton({
           text: "Continue"
         }) }}
+
       </form>
 
     </div>
