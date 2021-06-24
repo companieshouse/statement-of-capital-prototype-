@@ -28,7 +28,7 @@
               09164758
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/default-pages/company-details">
                 Change<span class="govuk-visually-hidden">
                   company number</span>
               </a>
@@ -42,7 +42,7 @@
               ABC Ltd
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/default-pages/company-details">
                 Change<span class="govuk-visually-hidden">
                   company name</span>
               </a>
@@ -53,37 +53,20 @@
         <h2 class="govuk-heading-m">Details of new shares issued</h2>
 
         <dl class="govuk-summary-list">
-          {% if data['sh01-end-date'] === "end-date" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of issue period
-              </dt>
-              <dd class="govuk-summary-list__value">
-                05/03/2021 to 05/04/2021
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">
-                    issue date</span>
-                </a>
-              </dd>
-            </div>
-          {% else %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of issue
-              </dt>
-              <dd class="govuk-summary-list__value">
-                05/03/2021
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">
-                    issue date</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of issue
+            </dt>
+            <dd class="govuk-summary-list__value">
+              05/03/2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/dynamic-pages/date">
+                Change<span class="govuk-visually-hidden">
+                  issue date</span>
+              </a>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Share type
@@ -92,7 +75,7 @@
               Ordinary
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/share-type">
                 Change<span class="govuk-visually-hidden">share type</span>
               </a>
             </dd>
@@ -105,7 +88,7 @@
               50
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/how-many-shares">
                 Change<span class="govuk-visually-hidden">
                   share number</span>
               </a>
@@ -119,7 +102,7 @@
               Pound sterling, GBP (£)
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/choose-a-currency">
                 Change<span class="govuk-visually-hidden">
                   share currency</span>
               </a>
@@ -133,7 +116,7 @@
               £1
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/choose-a-value">
                 Change<span class="govuk-visually-hidden">
                   share value</span>
               </a>
@@ -147,7 +130,7 @@
               Yes
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/paid-and-unpaid">
                 Change<span class="govuk-visually-hidden">
                   have the shares been paid for in full</span>
               </a>
@@ -161,7 +144,7 @@
               Cash
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/payment-method">
                 Change<span class="govuk-visually-hidden">
                   how were shares paid for</span>
               </a>
@@ -175,7 +158,7 @@
               £1
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/cash">
                 Change<span class="govuk-visually-hidden">
                   amount paid</span>
               </a>
@@ -189,7 +172,7 @@
               £0
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/dynamic-pages/paid-and-unpaid">
                 Change<span class="govuk-visually-hidden">
                   amount unpaid</span>
               </a>
@@ -203,7 +186,7 @@
               Each share has full rights in the company with respect to voting, dividends and distributions.
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="prescribed-particulars">
                 Change<span class="govuk-visually-hidden">
                   rights</span>
               </a>
