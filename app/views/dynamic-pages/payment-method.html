@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How were shares paid for?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/method-answer" method="post">
+
+        {{ govukRadios({
+          idPrefix: "paid-method",
+          name: "paid-method",
+          fieldset: {
+            legend: {
+              text: "How were the shares paid for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+   {
+     value: "cash",
+     text: "Cash",
+     hint: {
+       text: "This includes any monetary method of payment."
+     }
+   },
+            {
+              value: "non-cash",
+              text: "Non-cash consideration",
+              hint: {
+                text: "This is where shares were paid for with something other than cash, such as property or equipment."
+              }
+            },
+            {
+              value: "combination",
+              text: "A combination of cash and non-cash consideration"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+  text: "Continue"
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

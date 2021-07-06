@@ -14,15 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['form'] === 'SH01' %}
-        <span class="govuk-caption-l">
-          (SH01) Return of allotment of shares</span>
 
-      {% endif %}
-      {% if data['form'] === 'SH06' or data['form'] == null %}
-        <span class="govuk-caption-l">
-          Notify a cancellation of shares</span>
-      {% endif %}
       {% set LegendHtml %}
       {% if data['form'] === 'SH01' %}
         Would you like to allot more shares?
@@ -43,9 +35,6 @@
          classes: "govuk-fieldset__legend--l"
        }
      },
-        hint: {
-        text: "You can use any name for the share type, but listed below are some standard names that te majority of companies use."
-        },
         items: [
           {
             value: "yes",

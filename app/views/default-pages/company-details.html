@@ -10,11 +10,8 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
-    {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
-
+    {% include "includes/user-bar.html" %}
+   
     <main class="govuk-main-wrapper" id="main-content" role="main">
 
       <div class="govuk-grid-row">
@@ -22,32 +19,7 @@
 
           <form action="confirm-company-details" method="post">
 
-            {% if errorNumber == true %}
-              {{ govukErrorSummary({
-                     titleText: "There is a problem",
-                     errorList: errorList
-                   }) }}
-            {% endif %}
-
-            {% if errorNumber == true %}
-              {{ govukInput({
-                label: {
-                  text: "What is the company number?",
-                  isPageHeading: true,
-                  classes: "govuk-label--l"
-                },
-                hint: {
-                  text: "This is the 8-character reference issued by Companies House when the company was set up."
-                },
-                errorMessage: {
-                  text: "Enter a company number"
-                },
-                classes: "govuk-input--width-10",
-                id: "company-number",
-                name: "company-number"
-              }) }}
-            {% else %}
-              {{ govukInput({
+            {{ govukInput({
                   label: {
                     text: "What is the company number?",
                     isPageHeading: true,
@@ -60,7 +32,7 @@
                   id: "company-number",
                   name: "company-number"
                 }) }}
-            {% endif %}
+
             <details class="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">

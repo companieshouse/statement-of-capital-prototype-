@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What are the prescribed particulars
+  What are the rights attached to this share type
 {% endblock %}
 
 {% block beforeContent %}
-
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,27 +14,23 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['form'] === 'SH01' %}
-        <span class="govuk-caption-l">
-          Return of allotment of shares</span>
-      {% endif %}
-      {% if data['form'] === 'SH06' %}
-        <span class="govuk-caption-l">
-          Notify a cancellation of shares</span>
-      {% endif %}
 
       <form class="form" action="check-your-answers" method="get">
 
         {% set otherHtml %}
-        {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "Enter details of the prescribed particulars",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          }
-        }) }}
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="8000" data-threshold="90">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label" for="word-count">
+                Enter details of the rights attached to this share type
+              </label>
+            </h1>
+            <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="word-count" rows="10" aria-describedby="word-count-info"></textarea>
+          </div>
+          <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 4000 characters
+          </div>
+        </div>
         {% endset -%}
 
         {{ govukRadios({
@@ -43,7 +39,7 @@
   name: "particulars",
   fieldset: {
     legend: {
-      text: "What are the prescribed particulars of rights attached to the shares?",
+      text: "What are the rights attached to this share type?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -51,7 +47,10 @@
   items: [
     {
       value: "Full rights",
-      text: "Each share has full rights in the company with respect to voting, dividends and distributions"
+      text: "Each share has full rights in the company with respect to voting, dividends and distributions",
+      hint: {
+        text: "These are the most common rights for this share type."
+      }
     },
     {
       value: "other",

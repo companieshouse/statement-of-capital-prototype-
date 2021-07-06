@@ -3,6 +3,10 @@
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
 {% set serviceName %}
 {% endset%}
 {% block content %}

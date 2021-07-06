@@ -8,3 +8,9 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
+
+$(".inputs").keyup(function () {
+  if (this.value.length == this.maxLength) {
+    $(this).next('.inputs').focus();
+  }
+});

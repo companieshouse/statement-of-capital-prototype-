@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How much has been paid in cash for each share
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/cash-answer" method="get">
+
+        {{ govukInput({
+
+  label: {
+    text: "How much has been paid in cash for each share?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+    hint: {
+      text: "Include the share premium amount if there is one."
+    },
+  id: "how-much-paid",
+  name: "how-much-paid",
+  prefix: {
+    text: "£"
+  },
+  suffix: {
+    text: "(GBP)"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Choose a value for each share
+  What is the currency of the shares
 {% endblock %}
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,21 +14,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">
-        Variation of rights attached to shares</span>
 
-      <form class="form" action="check-your-answers" method="get">
+      <form class="form" action="choose-a-value" method="get">
 
         {% set otherHtml %}
-        {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "Enter the variation of rights attached to shares",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          }
-        }) }}
+        <div class="govuk-input--width-30">
+          <label for="autocomplete-default" class="govuk-label">Enter a currency</label>
+          <div id="currency" class="autocomplete-wrapper"></div>
+        </div>
+        <script src="/public/javascripts/accessible-autocomplete.js"></script>
+        <script src="/public/javascripts/currency.js"></script>
         {% endset -%}
 
         {{ govukRadios({
@@ -37,15 +32,23 @@
   name: "shareholders",
   fieldset: {
     legend: {
-      text: "What are the full details of the variation of rights?",
+      text: "What is the currency of the shares?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
     {
-      value: "Full rights",
-      text: "Each share has full rights in the company with respect to voting, dividends and distributions"
+      value: "gbp",
+      text: "Pound sterling, GBP (£)"
+    },
+    {
+      value: "usd",
+      text: "US dollar, USD ($)"
+    },
+    {
+      value: "eur",
+      text: "Euro, EUR (€)"
     },
     {
       value: "other",
@@ -65,5 +68,10 @@
 
     </div>
   </div>
+
+</form>
+
+</div>
+</div>
 
 {% endblock %}

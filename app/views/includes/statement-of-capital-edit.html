@@ -1,6 +1,16 @@
-<h2 class="govuk-heading-m">Statement of Capital (share capital)</h2>
+<div class="govuk-summary-card govuk-!-margin-bottom-4">
+  <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+    <p class="govuk-!-font-weight-bold govuk-!-margin-0">Share class</p>
 
-{{ govukSummaryList({
+    <p class="govuk-body">
+
+      <a href="https://www.gov.uk/government/publications/notify-a-cancellation-of-shares-sh06" class="govuk-link" rel="noreferrer noopener" target="_blank">Remove class (opens in new tab)</a>
+    </p>
+
+  </div>
+  <div style="padding: 15px;">
+
+    {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
     {
@@ -25,12 +35,12 @@
         text: "Currency"
       },
       value: {
-        text: "GBP"
+        text: "Pound sterling, GBP (£)"
       },
       actions: {
         items: [
           {
-            href: "#",
+            href: "/dynamic-pages/choose-a-currency",
             text: "Change",
             visuallyHiddenText: "currency"
           }
@@ -39,7 +49,7 @@
     },
     {
       key: {
-        text: "Number alloted"
+        text: "Number of shares"
       },
       value: {
         text: "100"
@@ -47,36 +57,43 @@
       actions: {
         items: [
           {
-            href: "#",
+            href: "/dynamic-pages/how-many-shares",
             text: "Change",
             visuallyHiddenText: "alloted"
           }
         ]
       }
-    },
+    }, {
+       key: {
+         text: "Value of each share"
+       },
+       value: {
+         text: "£1"
+       },
+       actions: {
+         items: [
+           {
+             href: "/dynamic-pages/choose-a-value",
+             text: "Change",
+             visuallyHiddenText: "alloted"
+           }
+         ]
+       }
+     },
     {
       key: {
-        text: "Aggregate nominal value"
+        text: "Total value"
       },
       value: {
-        text: '1000'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "value"
-          }
-        ]
+        text: '£100'
       }
     }
   ]
 }) }}
 
-<h2 class="govuk-heading-m">Statement of capital (totals)</h2>
+    <h2 class="govuk-heading-m">Totals</h2>
 
-{{ govukSummaryList({
+    {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
   rows: [
   {
@@ -85,50 +102,26 @@
     },
     value: {
       text: "GBP"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "currency"
-        }
-      ]
     }
   },
   {
     key: {
-      text: "Number alloted"
+      text: "Number of shares"
     },
     value: {
       text: "100"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "alloted"
-        }
-      ]
     }
   },
+
   {
     key: {
-      text: "Aggregate nominal value"
+      text: "Total value"
     },
     value: {
-      text: '1000'
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "value"
-        }
-      ]
+      text: '£100'
     }
     }
   ]
 }) }}
+  </div>
+</div>

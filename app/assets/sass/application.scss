@@ -13,8 +13,13 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/related-items";
+@import "accessible-autocomplete";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.autocomplete__menu {
+  font-family: 'GDS Transport', arial, sans-serif;
+}
 
 .govuk-summary-card {
   border: 1px solid #b1b4b6;
@@ -22,4 +27,90 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-summary-card_heading {
   background: #f3f2f1;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center
+}
+
+.display-none {
+  display: none;
+}
+
+.prescribed-particulars-text {
+  font-size: 19px;
+}
+
+.govuk-summary-list__row:last-child {
+  .govuk-summary-list__key {
+    border-bottom: 1px solid transparent;
+  }
+
+  .govuk-summary-list__value {
+    border-bottom: 1px solid transparent;
+  }
+
+  .govuk-summary-list__actions {
+    border-bottom: 1px solid transparent;
+  }
+}
+
+.date-input-autofocus-fields {
+  margin-right: 20px;
+  font-family: 'GDS Transport', arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.31579;
+}
+
+.date-input-autofocus-fields-labels {
+  display: flex;
+  color: #0b0b0b;
+  font-family: 'GDS Transport', arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.31579;
+}
+
+@media only screen and (max-width: 640px) {
+  .date-input-autofocus-fields {
+    margin-right: 10px;
+  }
+}
+
+.rtl {
+  direction:rtl; 
+  text-align: left
+}
+
+//Styles for user bar
+.user-bar {
+  display: flex; 
+  justify-content: space-between;
+  ul#navigation {
+    font-size: .9em;
+    margin: 0 0 1em;
+    padding: .8em 0;
+    text-align: right;
+  
+    li {
+      display: inline;
+      padding: 0 0 0 1.5em;
+      font-family: 'nta', Arial;
+      font-size: 16px;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+.pr-0 {
+  padding-right: 0px;
 }

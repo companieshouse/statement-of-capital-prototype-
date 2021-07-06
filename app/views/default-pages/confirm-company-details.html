@@ -6,63 +6,45 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
-    {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
+    {% include "includes/user-bar.html" %}
 
     <main class="govuk-main-wrapper" id="main-content" role="main">
       <form action="company-authentication" method="GET">
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-
-            <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
-
-            {{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Company name"
-      },
-      value: {
-        text: "ABC LTD"
-      }
-    },
-    {
-      key: {
-        text: "Company number"
-      },
-      value: {
-        text: "09164758"
-      }
-    },
-    {
-      key: {
-        text: "Status"
-      },
-      value: {
-        text: "Active"
-      }
-    },
-    {
-      key: {
-        text: "Incorporation date"
-      },
-      value: {
-        text: "26 June 2002"
-      }
-    }
-  ]
-}) }}
-            <p class="govuk-body">
-              <a class="govuk-link" href="company-details">Change company</a>
-            </p>
+          <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company name</dt>
+              <dd class="govuk-summary-list__value">ABC Ltd</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company number</dt>
+              <dd class="govuk-summary-list__value">09164758</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Company type</dt>
+              <dd class="govuk-summary-list__value">Private Limited Company</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Status</dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">Active</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Incorporation date</dt>
+              <dd class="govuk-summary-list__value">26 June 2002</dd>
+            </div>
+          </dl>
             {{ govukButton({
                 text: "Confirm and continue"
               }) }}
           </form>
-
+          <p class="govuk-body">
+            <a class="govuk-link" href="company-details">Choose a different company</a>
+          </p>
         </div>
         <!--govuk-grid-row-->
       </div>
