@@ -4,7 +4,7 @@
   The current statement of capital for ABC Ltd
 {% endblock %}
 {% block beforeContent %}
-  {% include "includes/phase-banner.html" %}    
+  {% include "includes/phase-banner.html" %}
   {% include "includes/user-bar.html" %}
 {% endblock %}
 
@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="change" method="post">
         <h1 class="govuk-heading-l">The current statement of capital for ABC Ltd</h1>
-        {% include "includes/statement-of-capital.html" %}
+        {% include "includes/statement-of-capital-£.html" %}
 
         {{ govukButton({
 text: "Continue"
