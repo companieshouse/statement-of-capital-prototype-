@@ -13,10 +13,10 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="prescribed-particulars" method="get">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="cost-per-item">
+          <label class="govuk-label govuk-label--l" for="amount-unpaid">
             What is the amount unpaid for each share?
           </label>
-          <div id="passport-issued-hint" class="govuk-hint">
+          <div id="amount-unpaid-hint" class="govuk-hint">
             Include the share premium amount if there is one.
           </div>
         </h1>
@@ -25,9 +25,9 @@
           <input class="govuk-input govuk-input--width-5" id="amount-paid" name="amount-paid" type="text" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">(GBP)</div>
         </div>
-        <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
-          Continue
-        </button>
+        {{ govukButton({
+    text: "Continue"
+  }) }}
       </div>
     </div>
   </div>
