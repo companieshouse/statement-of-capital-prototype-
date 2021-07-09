@@ -17,39 +17,43 @@
 
           <form action="/change-answer" method="post">
 
-            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  What change has been made to the share capital?
-                </h1>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="form-sh01" name="form" type="radio" value="SH01" data-aria-controls="conditional-form">
-                  <label class="govuk-label govuk-radios__label" for="form-sh01">
-                    New shares have been issued
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="form-other" name="form" type="radio" value="other" data-aria-controls="conditional-form-2">
-                  <label class="govuk-label govuk-radios__label" for="form-other">
-                    There has been another change to the share capital
-                  </label>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    What change has been made to the share capital?
+                  </h1>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="change-to-capital" name="change-to-capital" type="radio" value="new-shares">
+                    <label class="govuk-label govuk-radios__label" for="change-to-capital">
+                      New shares have been issued
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="change-to-capital-1" name="change-to-capital" type="radio" value="other">
+                    <label class="govuk-label govuk-radios__label" for="change-to-capital-1">
+                      There has been another change to the share capital
+                    </label>
+                  </div>
                 </div>
 
-                <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
-                  Continue
-                </button>
               </fieldset>
-            </form>
+            </div>
 
-          </div>
-          <!--govuk-grid-row-->
+            {{ govukButton({
+  text: "Continue"
+}) }}
+          </form>
+
         </div>
-        <!--govuk-grid-column-two-thirds-->
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-      </main>
-    </div>
-    <!---govuk-width-container-->
+    </main>
+  </div>
+  <!---govuk-width-container-->
 
-  {% endblock %}
+{% endblock %}
