@@ -1,10 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Companies House service
 {% endblock %}
 {% block beforeContent %}
-  {% include "includes/phase-banner.html" %}
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 {% set serviceName %}
@@ -132,7 +131,7 @@
     {% endset -%}
 
     {% set socHtml %}
-    {% include "includes/statement-of-capital-css.html" %}
+    {% include "includes/statement-of-capital.html" %}
     <a class="button-link" href="/default-pages/start">Update the Share Capital</a>
     {% endset -%}
 
