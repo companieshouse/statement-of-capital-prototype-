@@ -29,8 +29,8 @@
 
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date" name="date" type="radio" value="email" data-aria-controls="conditional-date">
-                <label class="govuk-label govuk-radios__label" for="date">
+                <input class="govuk-radios__input" id="one-day" name="one-day" type="radio" value="yes" data-aria-controls="conditional-date">
+                <label class="govuk-label govuk-radios__label" for="one-day">
                   Yes
                 </label>
               </div>
@@ -52,8 +52,8 @@
       }) }}
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date-2" name="date" type="radio" value="phone" data-aria-controls="conditional-date-2">
-                <label class="govuk-label govuk-radios__label" for="date-2">
+                <input class="govuk-radios__input" id="one-day-no" name="one-day" type="radio" value="no" data-aria-controls="conditional-date-2">
+                <label class="govuk-label govuk-radios__label" for="one-day-no">
                   No
                 </label>
               </div>
@@ -67,8 +67,8 @@
                   </div>
                 </legend>
                 {{ govukDateInput({
-              id: "date-issued",
-              namePrefix: "date-issued",
+              id: "start-date",
+              namePrefix: "start-date",
               fieldset: {
               legend: {
               text: "Period start date",
@@ -80,8 +80,8 @@
               }) }}
 
                 {{ govukDateInput({
-            id: "date-issued",
-            namePrefix: "date-issued",
+            id: "end-date",
+            namePrefix: "end-date",
             fieldset: {
             legend: {
             text: "Period end date",
